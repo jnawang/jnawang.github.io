@@ -9,4 +9,8 @@ navbar:
     - text: "Research"
       href: Research.html
       
-output_dir: 'docs'      
+output_dir: 'docs'
+
+output:
+  html_document:
+    theme: flatly
