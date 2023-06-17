@@ -10,4 +10,4 @@ getwd()
 "~/Box/d-rug/"
 
 # R proj changes wd to the directory
-
+getwd()
