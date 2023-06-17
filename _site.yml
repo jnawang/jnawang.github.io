@@ -7,6 +7,6 @@ navbar:
     - text: "About"
       href: about.html
     - text: "Research"
-      href: research.html
+      href: Research.html
       
 output_dir: 'docs'      
