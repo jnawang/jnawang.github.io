@@ -1,2 +1,4 @@
-.Rproj.user/
-data/
+/.quarto/
+docs/
+.DS_Store
+*.Rproj
