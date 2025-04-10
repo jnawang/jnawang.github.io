@@ -1,5 +1,8 @@
 /.quarto/
 docs/
 .DS_Store
+.Rproj.user/
 *.Rproj
-.Rproj.user/*
+.Rhistory
+.RData
+.Ruserdata
