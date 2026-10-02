@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1910" viewBox="0 0 1360 1910" role="img" aria-labelledby="title desc">
+  <title id="title">Natural-river coupling and cascading effects of dam regulation</title>
+  <desc id="desc">The supplied natural-river seasonal coupling figure above a conceptual diagram of dam operations, cascading physical and ecological responses, thresholds, and adaptive management.</desc>
+  <defs>
+    <marker id="down-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="42" markerHeight="42" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#2f7180"/></marker>
+  </defs>
+  <rect width="1360" height="1910" fill="#faf9f4"/>
+  <image href="eco-natural-river-coupling-original.png" x="30" y="25" width="1300" height="737" preserveAspectRatio="xMidYMid meet"/>
+  <line x1="60" y1="783" x2="1300" y2="783" stroke="#d0dcd7" stroke-width="2"/>
+  <text x="680" y="832" fill="#244f5b" font-family="Arial, sans-serif" font-size="36" font-weight="700" text-anchor="middle">Dam regulation reshapes this coupling</text>
+  <path d="M680 856 V895" fill="none" stroke="#2f7180" stroke-width="7" stroke-linecap="round" marker-end="url(#down-arrow)"/>
+  <image href="eco-dammed-system-draft.png" x="30" y="918" width="1300" height="980" preserveAspectRatio="xMidYMid meet"/>
+</svg>

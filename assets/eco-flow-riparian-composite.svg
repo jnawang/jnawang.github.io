@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1275" viewBox="0 65 1400 1275" role="img" aria-labelledby="title description">
+  <title id="title">Ecohydrology research figures</title>
+  <desc id="description">Composite of a river photograph, cottonwood seedling and water elevations for the Sacramento River, and riparian vegetation and hydraulic roughness maps for the San Joaquin River.</desc>
+  <defs>
+    <clipPath id="photo-crop"><rect x="60" y="155" width="610" height="470" rx="5"/></clipPath>
+    <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#3f8796"/></marker>
+  </defs>
+  <rect width="1400" height="1340" fill="#faf9f4"/>
+
+  <text x="60" y="110" fill="#39626a" font-family="Arial, sans-serif" font-size="21" font-weight="700">RIVER LANDSCAPE</text>
+  <text x="700" y="110" fill="#39626a" font-family="Arial, sans-serif" font-size="21" font-weight="700">SEEDLING AND WATER ELEVATIONS</text>
+  <text x="700" y="138" fill="#577074" font-family="Arial, sans-serif" font-size="19">Sacramento River, CA, USA</text>
+  <rect x="60" y="155" width="610" height="470" rx="5" fill="#edf3f0" stroke="#d3dcd8" stroke-width="2"/>
+  <image href="eco-river-photo.jpg" x="60" y="155" width="610" height="470" preserveAspectRatio="xMidYMid slice" clip-path="url(#photo-crop)"/>
+  <rect x="700" y="155" width="640" height="470" rx="5" fill="#fff" stroke="#d3dcd8" stroke-width="2"/>
+  <image href="eco-water-level-clean.png" x="705" y="157" width="630" height="466" preserveAspectRatio="xMidYMid meet"/>
+
+  <line x1="60" y1="655" x2="1340" y2="655" stroke="#cdd8d4" stroke-width="2"/>
+  <text x="700" y="696" fill="#577074" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">San Joaquin River, CA, USA</text>
+  <text x="60" y="733" fill="#39626a" font-family="Arial, sans-serif" font-size="21" font-weight="700">RIPARIAN VEGETATION</text>
+  <path d="M 638,725 H 755" stroke="#3f8796" stroke-width="3" fill="none" marker-end="url(#flow-arrow)"/>
+  <text x="762" y="733" fill="#39626a" font-family="Arial, sans-serif" font-size="21" font-weight="700">HYDRAULIC ROUGHNESS</text>
+  <rect x="60" y="750" width="1280" height="555" rx="5" fill="#fff" stroke="#d3dcd8" stroke-width="2"/>
+  <image href="eco-vegetation-roughness-maps.png" x="63" y="753" width="1274" height="549" preserveAspectRatio="xMidYMid meet"/>
+</svg>

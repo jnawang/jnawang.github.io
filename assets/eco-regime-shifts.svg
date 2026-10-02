@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="720" viewBox="0 0 1800 720" role="img" aria-labelledby="title desc">
+  <title id="title">Regime shifts in lake and river ecosystems</title>
+  <desc id="desc">Two conceptual plots. The lake ecosystem panel shows alternative clear and turbid states connected by a blue dashed unstable branch across a nutrient gradient. The river ecosystem panel shows a rapid change in dissolved oxygen along a flow velocity gradient.</desc>
+  <defs>
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#173e48"/>
+    </marker>
+    <style>
+      .panel { fill: #fbfaf6; stroke: #c9d5d2; stroke-width: 2; }
+      .title { font: 700 34px Arial, Helvetica, sans-serif; fill: #153c46; }
+      .axis-label { font: 600 27px Arial, Helvetica, sans-serif; fill: #244f59; }
+      .state-label { font: 700 25px Arial, Helvetica, sans-serif; }
+      .axis { fill: none; stroke: #173e48; stroke-width: 4; marker-end: url(#axis-arrow); }
+      .stable { fill: none; stroke: #183f49; stroke-width: 8; stroke-linecap: round; }
+      .unstable { fill: none; stroke: #2c70c9; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 13 13; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="720" fill="#f3f1ea"/>
+
+  <!-- Panel A: lake ecosystems, positioned first as requested -->
+  <g aria-label="Regime shift in lake ecosystems">
+    <rect class="panel" x="38" y="32" width="842" height="650" rx="12"/>
+    <text class="title" x="459" y="91" text-anchor="middle">Regime Shift in Lake Ecosystems</text>
+
+    <path class="axis" d="M135 590 H815"/>
+    <path class="axis" d="M135 590 V142"/>
+
+    <!-- Stable clear and turbid branches -->
+    <path class="stable" d="M190 538 C330 529 470 516 584 476 C664 448 713 410 715 370"/>
+    <path class="stable" d="M310 255 C350 208 468 174 615 154 C684 144 742 140 790 140"/>
+    <!-- Unstable middle branch -->
+    <path class="unstable" d="M310 255 C378 295 493 300 594 326 C663 344 708 355 715 370"/>
+
+    <text class="state-label" x="190" y="495" fill="#3f8d6a">Clear state</text>
+    <text class="state-label" x="626" y="189" fill="#a36b3f">Turbid state</text>
+    <text class="axis-label" x="475" y="652" text-anchor="middle">Nutrient</text>
+    <text class="axis-label" x="82" y="370" text-anchor="middle" transform="rotate(-90 82 370)">Turbidity</text>
+  </g>
+
+  <!-- Panel B: river ecosystems -->
+  <g aria-label="Regime shift in river ecosystems">
+    <rect class="panel" x="920" y="32" width="842" height="650" rx="12"/>
+    <text class="title" x="1341" y="91" text-anchor="middle">Regime Shift in River Ecosystems</text>
+
+    <path class="axis" d="M1017 590 H1697"/>
+    <path class="axis" d="M1017 590 V142"/>
+
+    <path class="stable" d="M1070 535 C1240 532 1338 522 1382 481 C1423 443 1420 378 1441 300 C1454 250 1474 211 1523 188 C1566 168 1617 167 1670 167"/>
+
+    <text class="axis-label" x="1357" y="652" text-anchor="middle">Flow velocity</text>
+    <text class="axis-label" x="958" y="370" text-anchor="middle" transform="rotate(-90 958 370)">Dissolved oxygen levels</text>
+  </g>
+</svg>

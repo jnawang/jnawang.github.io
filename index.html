@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junna Wang is a cross-disciplinary scientist working at the intersection of biodiversity and complex system science.">
+  <title>Junna Wang — Biodiversity &amp; Complex Systems Science</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #49666b;
+      --river: #0f4b55;
+      --water: #8eb5b6;
+      --climate: #bd884c;
+      --paper: #f3efe6;
+      --paper-light: #fbf9f3;
+      --line: rgba(18, 54, 64, .17);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1380px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 22%, rgba(142, 181, 182, .16), transparent 24rem),
+        var(--paper);
+      font: 400 1rem/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .11;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 239, 230, .86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      width: min(calc(100% - 3rem), var(--max));
+      height: 100%;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .brand {
+      text-decoration: none;
+      font: 600 1rem/1.2 var(--serif);
+      letter-spacing: .055em;
+      white-space: nowrap;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(1rem, 2.2vw, 2rem);
+    }
+    .site-nav a {
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .site-nav a:hover { color: var(--climate); }
+    .site-nav a[aria-current="page"] { color: var(--climate); }
+    .site-nav .scholar-link {
+      padding: .52rem .72rem;
+      border: 1px solid var(--ink);
+    }
+    .site-nav .scholar-link:hover { color: var(--paper-light); background: var(--ink); }
+
+    .home {
+      min-height: calc(100svh - 72px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .hero {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
+      align-items: center;
+      gap: clamp(2.5rem, 6vw, 7rem);
+      padding: clamp(2.5rem, 5.5vh, 5rem) 0;
+    }
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--climate);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .person-name {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(2.8rem, 4.8vw, 5.2rem)/.97 var(--serif);
+      letter-spacing: -.045em;
+    }
+    .bio {
+      max-width: 760px;
+      margin-top: 1.25rem;
+      color: var(--ink-soft);
+      font-size: clamp(.94rem, 1.05vw, 1.08rem);
+      line-height: 1.68;
+    }
+    .bio p { margin: 0; }
+    .bio p + p { margin-top: 1rem; }
+
+    .systems-figure {
+      position: relative;
+      width: min(100%, 590px);
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+    .systems-figure::before {
+      content: "";
+      position: absolute;
+      inset: 8% 4%;
+      z-index: -1;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(251, 249, 243, .52);
+      box-shadow: 0 28px 70px rgba(15, 75, 85, .08);
+    }
+    .systems-figure svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .orbit {
+      fill: none;
+      stroke: rgba(18, 54, 64, .24);
+      stroke-width: 1.1;
+    }
+    .link {
+      fill: none;
+      stroke: rgba(15, 75, 85, .58);
+      stroke-width: 2.2;
+    }
+    .node {
+      fill: rgba(251, 249, 243, .97);
+      stroke: rgba(18, 54, 64, .35);
+      stroke-width: 1.5;
+    }
+    .node-center { fill: var(--river); stroke: var(--river); }
+    .label {
+      fill: var(--ink);
+      font: 700 16px/1 var(--sans);
+      letter-spacing: .02em;
+      text-anchor: middle;
+    }
+    .label-center { fill: var(--paper-light); font-size: 18px; }
+
+    .page-foot {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      padding: 1rem 0 1.2rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      color: var(--ink-soft);
+      font-size: .76rem;
+    }
+    .fields { letter-spacing: .04em; }
+
+    @media (max-width: 950px) {
+      .home { display: block; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 4.5rem 0 2.5rem;
+      }
+      .systems-figure { width: min(100%, 560px); }
+      .page-foot { margin-top: 1rem; }
+    }
+
+    @media (max-width: 760px) {
+      .site-header { height: auto; }
+      .header-inner, .hero, .page-foot { width: min(calc(100% - 2rem), var(--max)); }
+      .header-inner {
+        min-height: 64px;
+        padding: .75rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .65rem;
+      }
+      .brand { font-size: .88rem; letter-spacing: .035em; }
+      .site-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1.15rem;
+        overflow-x: auto;
+        padding-bottom: .2rem;
+      }
+      .site-nav a { font-size: .74rem; }
+      .home { min-height: auto; }
+      .hero { padding: 3.5rem 0 1.5rem; }
+      .person-name { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .bio { font-size: .96rem; }
+      .systems-figure { padding: 0; }
+      .page-foot { align-items: flex-start; flex-direction: column; gap: .35rem; }
+    }
+
+    @media (max-height: 760px) and (min-width: 951px) {
+      .hero { padding: 1.8rem 0; }
+      .person-name { font-size: clamp(2.6rem, 4.2vw, 4.2rem); }
+      .bio { font-size: .92rem; line-height: 1.55; }
+      .systems-figure { width: min(100%, 510px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">Biodiversity &amp; Complex Systems Science</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about" aria-current="page">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home">
+    <section class="hero" id="about" aria-label="About Junna Wang">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h1 class="person-name">Junna Wang</h1>
+        <div class="bio">
+          <p>I am a cross-disciplinary scientist curious about how complex adaptive systems—from the Earth system to tiny plankton communities—reorganize and alter their functioning under global change. My research bridges ecology, hydrology, biogeochemistry, and climate science, reflecting a multidisciplinary scientific journey and a core belief that understanding complex systems demands crossing disciplinary boundaries.</p>
+          <p>The mission of my research is to: (1) uncover the principles and mechanisms governing the organization and functioning of complex ecosystems; (2) predict how organisms adapt, communities reorganize, and ecosystem functions shift under global environmental change; and (3) develop solutions that facilitate biological and human adaptation to a changing planet.</p>
+        </div>
+      </div>
+
+      <figure class="systems-figure" id="research">
+        <svg viewBox="0 0 620 560" role="img" aria-labelledby="systems-title systems-description">
+          <title id="systems-title">Interconnected research domains</title>
+          <desc id="systems-description">Biodiversity is at the center, connected with ecohydrology, biogeochemistry, and climate. The three surrounding domains are also interconnected.</desc>
+          <path class="orbit" d="M310 82 L104 408 L516 408 Z" />
+          <path class="link" d="M310 280 L310 82 M310 280 L104 408 M310 280 L516 408" />
+          <circle class="node" cx="310" cy="82" r="70" />
+          <circle class="node" cx="104" cy="408" r="74" />
+          <circle class="node" cx="516" cy="408" r="82" />
+          <circle class="node node-center" cx="310" cy="280" r="94" />
+          <text class="label" x="310" y="88">Climate</text>
+          <text class="label" x="104" y="414">Ecohydrology</text>
+          <text class="label" x="516" y="404"><tspan x="516">Bio-</tspan><tspan x="516" dy="21">geochemistry</tspan></text>
+          <text class="label label-center" x="310" y="286">Biodiversity</text>
+        </svg>
+      </figure>
+    </section>
+
+    <footer class="page-foot" id="contact">
+      <span class="fields">Biodiversity · Complex Adaptive System · Global Change</span>
+    </footer>
+  </main>
+</body>
+</html>

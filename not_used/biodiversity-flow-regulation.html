@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junna Wang's research on biodiversity, environmental flows, dam operations, and fish spawning responses in regulated rivers.">
+  <title>Biodiversity &amp; Flow Regulation — Junna Wang</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #3e5a60;
+      --river: #0f4b55;
+      --deep: #0b3540;
+      --water: #89afb1;
+      --wetland: #718064;
+      --sediment: #b4874d;
+      --paper: #f3efe6;
+      --paper-bright: #faf8f2;
+      --line: rgba(18, 54, 64, .18);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 400 1rem/1.68 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 1rem; color: var(--sediment); font-size: .75rem; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    .section-title { margin: 0; font: 400 clamp(2.35rem, 5vw, 4.5rem)/1 var(--serif); letter-spacing: -.04em; }
+    .section-lede { max-width: 720px; margin: 1.35rem 0 0; color: var(--ink-soft); font-size: 1.08rem; }
+    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: rgba(243,239,230,.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; font: 600 1.02rem/1 var(--serif); letter-spacing: .25em; text-transform: uppercase; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.3rem); }
+    .nav-links a { text-decoration: none; font-size: .82rem; font-weight: 650; }
+    .nav-links a:hover { color: var(--sediment); }
+    .back-link { padding: .64rem .9rem; border: 1px solid var(--ink); }
+    .back-link:hover { color: var(--paper-bright) !important; background: var(--ink); }
+    .menu-toggle { display: none; width: 46px; height: 44px; border: 1px solid var(--line); color: var(--ink); background: transparent; font: inherit; cursor: pointer; }
+
+    .topic-hero {
+      min-height: calc(100svh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy { align-self: center; padding: clamp(5rem, 9vw, 8.5rem) clamp(2.5rem, 5vw, 6rem) 4rem max(1.5rem, calc((100vw - var(--max)) / 2)); }
+    .topic-index { display: inline-grid; place-items: center; width: 56px; height: 56px; margin-bottom: 2rem; border: 1px solid var(--line); border-radius: 50%; color: var(--sediment); font: italic 1rem var(--serif); }
+    h1 { max-width: 760px; margin: 0; font: 400 clamp(3.6rem, 6.8vw, 7.3rem)/.9 var(--serif); letter-spacing: -.058em; }
+    .hero-lede { max-width: 650px; margin: 2rem 0 0; color: var(--ink-soft); font-size: clamp(1.05rem, 1.45vw, 1.3rem); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2.5rem; }
+    .hero-meta span { padding: .52rem .72rem; border: 1px solid var(--line); background: rgba(250,248,242,.36); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-visual { position: relative; min-height: 720px; overflow: hidden; background: linear-gradient(90deg, var(--paper), rgba(243,239,230,.15) 15%, transparent 45%), linear-gradient(180deg, rgba(8,42,50,.04), rgba(8,42,50,.48)), url("assets/river-estuary-hero.png") 55% center/cover no-repeat, var(--water); }
+    .hero-visual::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg, transparent, #000 35%); }
+    .hero-note { position: absolute; right: 3rem; color: white; font-size: .7rem; font-weight: 700; letter-spacing: .15em; line-height: 1.6; text-transform: uppercase; text-shadow: 0 2px 18px rgba(0,0,0,.3); }
+    .hero-note.top { top: 3rem; }
+    .hero-note.bottom { bottom: 3rem; }
+    .pulse { position: absolute; left: 20%; right: 7%; bottom: 22%; height: 130px; }
+    .pulse svg { width: 100%; height: 100%; overflow: visible; }
+
+    .metrics { border-bottom: 1px solid var(--line); background: var(--paper-bright); }
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .metric { min-height: 180px; padding: 2.4rem; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; margin-bottom: .6rem; font: 400 clamp(2.4rem, 5vw, 4.6rem)/1 var(--serif); }
+    .metric span { color: var(--ink-soft); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    section.content-section { padding: clamp(5.5rem, 9vw, 8.5rem) 0; border-bottom: 1px solid var(--line); }
+    .intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .intro-copy { font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.55; }
+    .intro-copy p { margin: 0 0 1.5rem; }
+    .intro-copy p:last-child { margin-bottom: 0; color: var(--ink-soft); font-size: 1rem; }
+
+    .mechanism-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1rem; margin-top: 3.5rem; }
+    .flow-figure { min-height: 560px; padding: clamp(1.5rem, 4vw, 3rem); color: white; background: var(--deep); }
+    .figure-kicker { margin: 0 0 2rem; color: rgba(255,255,255,.63); font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .figure-title { max-width: 520px; margin: 0; font: 400 clamp(2rem, 4vw, 3.7rem)/1 var(--serif); }
+    .hydrograph { margin-top: 4rem; }
+    .hydrograph text { fill: rgba(255,255,255,.7); font: 600 11px var(--sans); letter-spacing: .08em; }
+    .hydrograph .grid { stroke: rgba(255,255,255,.13); }
+    .hydrograph .natural { fill: none; stroke: #d5ad70; stroke-width: 4; }
+    .hydrograph .regulated { fill: none; stroke: #93bec2; stroke-width: 4; stroke-dasharray: 9 8; }
+    .legend { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; color: rgba(255,255,255,.72); font-size: .78rem; }
+    .legend span::before { content: ""; display: inline-block; width: 24px; height: 3px; margin-right: .5rem; vertical-align: middle; background: #d5ad70; }
+    .legend span:last-child::before { background: #93bec2; }
+    .process-list { display: grid; gap: 1rem; }
+    .process-card { min-height: 172px; display: grid; grid-template-columns: 46px 1fr; gap: 1.1rem; padding: 1.6rem; border: 1px solid var(--line); background: rgba(250,248,242,.56); }
+    .process-card .number { color: var(--sediment); font: italic 1rem var(--serif); }
+    .process-card h3 { margin: 0 0 .55rem; font: 400 1.45rem/1.15 var(--serif); }
+    .process-card p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
+
+    .case-study { background: #e9e5da; }
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .case-copy p { color: var(--ink-soft); }
+    .evidence-list { margin: 2.2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .evidence-list li { display: grid; grid-template-columns: 42px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .evidence-list strong { color: var(--sediment); font: italic 1rem var(--serif); }
+    .evidence-list span { color: var(--ink-soft); }
+    .finding { padding: clamp(2rem, 4vw, 3.5rem); border: 1px solid var(--line); background: var(--paper-bright); }
+    .finding blockquote { margin: 0; font: 400 clamp(2rem, 4vw, 3.3rem)/1.08 var(--serif); letter-spacing: -.03em; }
+    .finding p { margin: 2rem 0 0; color: var(--ink-soft); }
+
+    .methods-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3.5rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .method { min-height: 240px; padding: 1.6rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .method small { color: var(--sediment); font-weight: 700; letter-spacing: .12em; }
+    .method h3 { margin: 2.4rem 0 .65rem; font: 400 1.4rem/1.15 var(--serif); }
+    .method p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+
+    .recommendation { color: white; background: var(--river); }
+    .recommendation-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 8rem); }
+    .recommendation .eyebrow { color: #d9b87e; }
+    .recommendation .section-lede { color: rgba(255,255,255,.72); }
+    .release-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(255,255,255,.22); border-left: 1px solid rgba(255,255,255,.22); }
+    .release-item { min-height: 180px; padding: 1.6rem; border-right: 1px solid rgba(255,255,255,.22); border-bottom: 1px solid rgba(255,255,255,.22); }
+    .release-item strong { display: block; margin-bottom: .7rem; font: 400 clamp(1.8rem, 3vw, 2.7rem)/1 var(--serif); }
+    .release-item span { color: rgba(255,255,255,.7); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .caveat { margin: 1.5rem 0 0; color: rgba(255,255,255,.62); font-size: .78rem; }
+
+    .paper-card { display: grid; grid-template-columns: 100px 1fr auto; gap: 2rem; align-items: start; padding: 2.2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .paper-year { color: var(--sediment); font: 400 2.5rem/1 var(--serif); }
+    .paper-card h3 { margin: 0; font: 400 clamp(1.5rem, 3vw, 2.4rem)/1.17 var(--serif); }
+    .paper-card p { margin: .8rem 0 0; color: var(--ink-soft); }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: .6rem; padding: .78rem 1rem; border: 1px solid var(--ink); text-decoration: none; font-size: .82rem; font-weight: 700; white-space: nowrap; transition: color .2s ease, background .2s ease, transform .2s ease; }
+    .button:hover { color: white; background: var(--ink); transform: translateY(-2px); }
+
+    footer { padding: 2.2rem 0; color: white; background: var(--deep); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: .8rem; }
+    .footer-name { font-family: var(--serif); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: #d9b87e; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links { position: absolute; top: 76px; left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 1rem 1.5rem 1.5rem; border-bottom: 1px solid var(--line); background: var(--paper-bright); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .9rem 0; border-bottom: 1px solid var(--line); }
+      .nav-links .back-link { margin-top: 1rem; padding: .8rem 1rem; text-align: center; border: 1px solid var(--ink); }
+      .topic-hero { min-height: auto; grid-template-columns: 1fr; }
+      .hero-copy { padding: 6rem max(1.5rem, calc((100vw - var(--max)) / 2)) 4rem; }
+      .hero-visual { min-height: 63vw; }
+      .intro-grid, .mechanism-grid, .case-grid, .recommendation-grid { grid-template-columns: 1fr; }
+      .methods-grid { grid-template-columns: repeat(2, 1fr); }
+      .paper-card { grid-template-columns: 80px 1fr; }
+      .paper-card .button { grid-column: 2; justify-self: start; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 2rem), var(--max)); }
+      .nav { min-height: 68px; }
+      .nav-links { top: 68px; }
+      .brand { font-size: .88rem; letter-spacing: .19em; }
+      .hero-copy { padding: 4.5rem 1rem 3.5rem; }
+      h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
+      .hero-visual { min-height: 90vw; }
+      .hero-note { display: none; }
+      .metrics-grid, .methods-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .release-grid { grid-template-columns: 1fr; }
+      .paper-card { grid-template-columns: 1fr; }
+      .paper-card .button { grid-column: 1; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Junna Wang</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">Menu</button>
+      <nav class="nav-links" id="navigation" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#mechanisms">Mechanisms</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#methods">Methods</a>
+        <a href="#publication">Publication</a>
+        <a href="biodiversity-flow-regulation-zh.html" lang="zh-CN">中文</a>
+        <a class="back-link" href="index.html">← Main site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="topic-hero" aria-labelledby="page-title">
+      <div class="hero-copy reveal">
+        <span class="topic-index">02</span>
+        <p class="eyebrow">Research Theme</p>
+        <h1 id="page-title">Biodiversity &amp; Flow Regulation</h1>
+        <p class="hero-lede">Understanding how dams, environmental flows, and shifting thermal regimes reshape the conditions aquatic species need to reproduce and persist.</p>
+        <div class="hero-meta"><span>Environmental flows</span><span>Fish spawning</span><span>Regulated rivers</span><span>Ecohydrology</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Aerial river and estuary landscape with a conceptual flow pulse overlay">
+        <p class="hero-note top">Flow<br>Temperature<br>Timing<br>Duration</p>
+        <div class="pulse" aria-hidden="true">
+          <svg viewBox="0 0 800 130" preserveAspectRatio="none">
+            <path d="M0 104 C95 102 116 96 154 92 C196 87 217 19 276 22 C342 25 347 91 415 89 C490 87 497 47 548 45 C603 43 626 94 800 89" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3"/>
+            <path d="M0 117H800" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+          </svg>
+        </div>
+        <p class="hero-note bottom">Managing water<br>for ecological<br>opportunity</p>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Case study overview">
+      <div class="container metrics-grid reveal">
+        <div class="metric"><strong>13</strong><span>Years of records · 1997–2009</span></div>
+        <div class="metric"><strong>4</strong><span>Major Chinese carp species</span></div>
+        <div class="metric"><strong>Pre / Post</strong><span>Dam comparison</span></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="overview" aria-labelledby="overview-title">
+      <div class="container intro-grid reveal">
+        <div><p class="eyebrow">The central question</p><h2 class="section-title" id="overview-title">When rivers are regulated, what happens to ecological timing?</h2></div>
+        <div class="intro-copy">
+          <p>River flow is more than water moving downstream. Its seasonal rise, duration, magnitude, and temperature create biological cues that help organize migration, spawning, recruitment, and food-web dynamics.</p>
+          <p>Reservoir operations can change those cues. This research links hydrological alteration to ecological response, then asks how water operations might better support biodiversity while still meeting human needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="mechanisms" aria-labelledby="mechanisms-title">
+      <div class="container">
+        <p class="eyebrow reveal">Flow–ecology relationships</p>
+        <h2 class="section-title reveal" id="mechanisms-title">From operations to organisms</h2>
+        <p class="section-lede reveal">A regulated hydrograph changes several environmental dimensions at once. Ecological response depends on their interaction—not on discharge alone.</p>
+        <div class="mechanism-grid">
+          <div class="flow-figure reveal">
+            <p class="figure-kicker">Conceptual hydrograph · not to scale</p>
+            <h3 class="figure-title">Ecological opportunity emerges from the shape and timing of a flow pulse.</h3>
+            <svg class="hydrograph" viewBox="0 0 700 250" role="img" aria-label="Conceptual comparison of natural and regulated seasonal flow pulses">
+              <path class="grid" d="M55 25V210H680M55 70H680M55 115H680M55 160H680M180 25V210M305 25V210M430 25V210M555 25V210" fill="none"/>
+              <path class="natural" d="M55 188 C140 184 167 178 210 167 C258 154 272 55 342 48 C417 41 419 153 494 160 C560 166 592 177 680 180"/>
+              <path class="regulated" d="M55 181 C164 180 194 155 256 147 C318 139 349 115 401 114 C458 113 505 145 680 152"/>
+              <text x="8" y="32">FLOW</text><text x="612" y="232">SEASON</text>
+            </svg>
+            <div class="legend"><span>Seasonal pulse</span><span>Regulated pattern</span></div>
+          </div>
+          <div class="process-list">
+            <article class="process-card reveal"><span class="number">01</span><div><h3>Hydrological signal</h3><p>Timing, duration, rise rate, and magnitude determine whether a flow event provides a usable spawning cue.</p></div></article>
+            <article class="process-card reveal"><span class="number">02</span><div><h3>Thermal context</h3><p>Water temperature shapes readiness and can shift the seasonal window in which fish respond to rising flows.</p></div></article>
+            <article class="process-card reveal"><span class="number">03</span><div><h3>Biological response</h3><p>Spawning behavior, egg and larval transport, habitat access, and recruitment reflect the combined environmental signal.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section case-study" id="case-study" aria-labelledby="case-title">
+      <div class="container case-grid">
+        <div class="case-copy reveal">
+          <p class="eyebrow">Yangtze River case study</p>
+          <h2 class="section-title" id="case-title">Fish spawning response to the Three Gorges Dam</h2>
+          <p>A 13-year record spanning seven pre-dam and six post-dam years was analyzed to identify how the environmental factors associated with larval abundance changed after river regulation.</p>
+          <ul class="evidence-list">
+            <li><strong>01</strong><span>Before regulation, the duration and rise rate of flow increases were significant factors.</span></li>
+            <li><strong>02</strong><span>After regulation, the timing of flow increase became the most significant factor.</span></li>
+            <li><strong>03</strong><span>Water temperature emerged as significant, while rise rate was no longer identified as significant.</span></li>
+          </ul>
+        </div>
+        <aside class="finding reveal">
+          <p class="eyebrow">Key interpretation</p>
+          <blockquote>Restoring a “natural-looking” flow pulse is not enough if fish have already shifted when and how they respond.</blockquote>
+          <p>The study indicates that environmental-flow design should account for adaptive biological responses to altered thermal and flow regimes.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section" id="methods" aria-labelledby="methods-title">
+      <div class="container">
+        <p class="eyebrow reveal">Research approach</p>
+        <h2 class="section-title reveal" id="methods-title">Linking long-term observations to operational decisions</h2>
+        <div class="methods-grid">
+          <article class="method reveal"><small>01</small><h3>Long-term ecological records</h3><p>Larval abundance and spawning observations across multiple years and hydrologic conditions.</p></article>
+          <article class="method reveal"><small>02</small><h3>Hydroclimatic context</h3><p>Flow timing, rise rate, event duration, discharge, and water temperature.</p></article>
+          <article class="method reveal"><small>03</small><h3>Genetic programming</h3><p>Data-driven identification of significant factors and nonlinear ecological relationships.</p></article>
+          <article class="method reveal"><small>04</small><h3>Pre–post comparison</h3><p>Evaluating how the dominant controls and biological responses changed following regulation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section recommendation" aria-labelledby="release-title">
+      <div class="container recommendation-grid">
+        <div class="reveal"><p class="eyebrow">Management implication</p><h2 class="section-title" id="release-title">Design releases around ecological windows.</h2><p class="section-lede">The study translated observed flow–ecology relationships into a candidate operational window for supporting the spawning of four major Chinese carp species.</p></div>
+        <div class="reveal">
+          <div class="release-grid">
+            <div class="release-item"><strong>≥ 5 days</strong><span>Flow-increase duration</span></div>
+            <div class="release-item"><strong>900–3,000</strong><span>m³ s⁻¹ day⁻¹ rise rate</span></div>
+            <div class="release-item"><strong>≤ 30,000</strong><span>m³ s⁻¹ discharge</span></div>
+            <div class="release-item"><strong>&lt; 25°C</strong><span>Water temperature</span></div>
+          </div>
+          <p class="caveat">Reported study recommendation: at least one qualifying release between June 15 and July 20. Operational application requires current monitoring, system constraints, and adaptive evaluation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="publication" aria-labelledby="publication-title">
+      <div class="container">
+        <p class="eyebrow reveal">Selected publication</p>
+        <h2 class="section-title reveal" id="publication-title">Read the research</h2>
+        <article class="paper-card reveal">
+          <div class="paper-year">2014</div>
+          <div><h3>Variation in the significant environmental factors affecting larval abundance of four major Chinese carp species: fish spawning response to the Three Gorges Dam</h3><p>Junna Wang, Chong Li, Xinbin Duan, Daqing Chen, Shunxin Feng, Huihuang Luo, Qidong Peng &amp; Wengen Liao · Freshwater Biology 59(7), 1343–1360.</p></div>
+          <a class="button" href="https://onlinelibrary.wiley.com/doi/10.1111/fwb.12348" target="_blank" rel="noreferrer">View paper ↗</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><span class="footer-name">Junna Wang</span> · Yale University</div>
+      <div class="footer-links"><a href="index.html">Main site</a><a href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navigation.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navigation.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Menu';
+      }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>

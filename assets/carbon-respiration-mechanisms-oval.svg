@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1400 760"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg40"
+   sodipodi:docname="carbon-respiration-mechanisms-oval.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.62105263"
+     inkscape:cx="699.61865"
+     inkscape:cy="380.80509"
+     inkscape:window-width="1512"
+     inkscape:window-height="842"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg40" />
+  <title
+     id="title">Thermal and resource controls on respiratory carbon feedback</title>
+  <desc
+     id="desc">An oval carbon–climate feedback loop surrounds four mechanisms. Global warming connects in blue to water limitation and substrate availability, and in green to thermal acclimation of plant respiration and thermal adaptation of microbial respiration. Both resource conditions feed both respiration responses. The responses connect to respiratory carbon dioxide release.</desc>
+  <defs
+     id="defs4">
+    <rect
+       x="834.0678"
+       y="473.38983"
+       width="3.220339"
+       height="103.05085"
+       id="rect42" />
+    <linearGradient
+       id="sky"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#e9f2f3"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#f8f7f1"
+         id="stop2" />
+    </linearGradient>
+    <marker
+       id="red-arrow"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M1 1 9 5 1 9Z"
+         fill="#c26546"
+         id="path2" />
+    </marker>
+    <marker
+       id="blue-arrow"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M1 1 9 5 1 9Z"
+         fill="#528ba4"
+         id="path3" />
+    </marker>
+    <marker
+       id="green-arrow"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M1 1 9 5 1 9Z"
+         fill="#3f9576"
+         id="path4" />
+    </marker>
+    <style
+       id="style4">
+      text { font-family: Inter, Arial, Helvetica, sans-serif; }
+      .outer { fill: none; stroke: #c26546; stroke-width: 4.5; stroke-linecap: round; }
+      .blue-line { fill: none; stroke: #528ba4; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .green-line { fill: none; stroke: #3f9576; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .blue-label { fill: #396d83; font-size: 25px; font-weight: 700; }
+      .green-label { fill: #287453; font-size: 24px; font-weight: 700; }
+    </style>
+  </defs>
+  <rect
+     width="1400"
+     height="760"
+     fill="#faf9f4"
+     id="rect4" />
+  <text
+     x="308.71835"
+     y="232.884"
+     fill="#c26546"
+     font-size="48px"
+     font-weight="700"
+     text-anchor="middle"
+     id="positive-feedback-sign-6-6"
+     style="font-family:Inter, Arial, Helvetica, sans-serif">+</text>
+  <text
+     x="242.02344"
+     y="612.96875"
+     fill="#c26546"
+     font-size="48px"
+     font-weight="700"
+     text-anchor="middle"
+     id="positive-feedback-sign-6-1"
+     style="font-family:Inter, Arial, Helvetica, sans-serif">+</text>
+  <text
+     x="1153.0234"
+     y="612.96875"
+     fill="#c26546"
+     font-size="48px"
+     font-weight="700"
+     text-anchor="middle"
+     id="positive-feedback-sign-6"
+     style="font-family:Inter, Arial, Helvetica, sans-serif">+</text>
+  <rect
+     y="50"
+     width="1400"
+     height="155"
+     fill="url(#sky)"
+     id="rect5" />
+  <!-- The original oval feedback structure is retained, with four open arcs around its nodes. -->
+  <path
+     class="outer"
+     d="M 156.56805,370.42927 C 171.83828,222.02555 419.97952,102.50578 593.04212,99.517783"
+     marker-end="url(#red-arrow)"
+     id="path5" />
+  <path
+     class="outer"
+     d="M 807.00416,99.514921 C 1009.2261,103.49978 1222.8231,221.05301 1240.5175,370.48508"
+     marker-end="url(#red-arrow)"
+     id="path6" />
+  <path
+     class="outer"
+     d="M 1243.1736,418.71285 C 1223.2983,577.48137 999.36886,648.4205 864.2162,649.54651"
+     marker-end="url(#red-arrow)"
+     id="path7" />
+  <path
+     class="outer"
+     d="m 535.7037,654.53198 c -171.73991,0 -359.21171,-75.9356 -374.94361,-235.86057"
+     marker-end="url(#red-arrow)"
+     id="path8" />
+  <text
+     x="1090"
+     y="231"
+     fill="#c26546"
+     font-size="48px"
+     font-weight="700"
+     text-anchor="middle"
+     id="positive-feedback-sign">+</text>
+  <!-- Direct warming effects: blue resource conditions and green respiratory responses. -->
+  <path
+     class="blue-line"
+     d="M651 146 C570 191 504 205 485 255"
+     marker-end="url(#blue-arrow)"
+     id="path9" />
+  <path
+     class="blue-line"
+     d="M749 146 C830 191 896 205 915 255"
+     marker-end="url(#blue-arrow)"
+     id="path10" />
+  <path
+     class="green-line"
+     d="M619 132 C430 155 300 280 335 441"
+     marker-end="url(#green-arrow)"
+     id="path11" />
+  <path
+     class="green-line"
+     d="M781 132 C970 155 1100 280 1065 441"
+     marker-end="url(#green-arrow)"
+     id="path12" />
+  <!-- Resource relationships: water affects substrate; both reach both respiration responses. -->
+  <path
+     class="blue-line"
+     d="M645 305 H755"
+     marker-end="url(#blue-arrow)"
+     id="path13" />
+  <path
+     class="blue-line"
+     d="M425 355 V438"
+     marker-end="url(#blue-arrow)"
+     id="water-to-plant-acclimation" />
+  <path
+     class="blue-line"
+     d="M975 355 V438"
+     marker-end="url(#blue-arrow)"
+     id="substrate-to-microbial-adaptation" />
+  <path
+     class="blue-line"
+     d="M485 355 C560 391 638 401 688 407"
+     id="path14" />
+  <path
+     class="blue-line"
+     d="M915 355 C840 391 762 401 712 407"
+     id="path15" />
+  <path
+     class="blue-line"
+     d="M688 415 C633 427 557 433 485 445"
+     marker-end="url(#blue-arrow)"
+     id="path16" />
+  <path
+     class="blue-line"
+     d="M712 415 C767 427 843 433 915 445"
+     marker-end="url(#blue-arrow)"
+     id="path17" />
+  <circle
+     cx="700"
+     cy="411"
+     r="10"
+     fill="#528ba4"
+     stroke="#faf9f4"
+     stroke-width="3"
+     id="circle17" />
+  <!-- Acclimation and adaptation converge on respiratory carbon release. -->
+  <path
+     class="green-line"
+     d="m 485.64023,560.03246 c 45.62242,39.17719 108.10532,47.57229 154.71954,55.9674"
+     marker-end="url(#green-arrow)"
+     id="path18" />
+  <path
+     class="green-line"
+     d="M 914.16482,559.99459 C 868.65736,602.83222 806.33193,612.01171 759.83518,621.1912"
+     marker-end="url(#green-arrow)"
+     id="path19" />
+  <!-- Four revised mechanism boxes, with small illustrations. -->
+  <rect
+     x="392.46228"
+     y="254.83517"
+     width="252.70255"
+     height="100.32967"
+     rx="14.214519"
+     fill="#e8f2f5"
+     stroke="#92bbca"
+     stroke-width="2.67034"
+     id="rect19" />
+  <path
+     d="m 421.09388,276.75587 c -13.96855,21.56947 -17.77816,29.65802 -17.77816,36.39848 a 18.41309,19.547332 0 0 0 36.82618,0 c 0,-6.74046 -6.34934,-18.87328 -19.04802,-36.39848 z"
+     fill="#8ec4d6"
+     stroke="#528ba4"
+     stroke-width="2.61679"
+     id="path20" />
+  <path
+     d="m 410.93493,311.13221 c 0.63494,6.06641 4.44454,10.78473 9.52401,12.13283"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="3.27099"
+     stroke-linecap="round"
+     id="path21" />
+  <text
+     class="blue-label"
+     x="448"
+     y="313"
+     id="text21">Water limitation</text>
+  <rect
+     x="754.84351"
+     y="254.84349"
+     width="255.90623"
+     height="100.31301"
+     rx="14.394726"
+     fill="#e8f2f5"
+     stroke="#92bbca"
+     stroke-width="2.68699"
+     id="rect21" />
+  <g id="substrate-icon" aria-label="Soil carbon substrate">
+    <path d="M773 326 C780 318 783 305 792 300 C796 291 805 286 812 288 C821 286 832 295 836 304 C844 310 844 321 851 326 C836 336 787 338 773 326Z" fill="#80604f" stroke="#604638" stroke-width="2.5"/>
+    <path d="M787 320 C795 316 800 304 811 303 M814 301 C823 302 831 311 834 320" fill="none" stroke="#a27b66" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="781" cy="336" r="2.5" fill="#604638"/><circle cx="793" cy="341" r="2" fill="#80604f"/><circle cx="828" cy="340" r="2.5" fill="#604638"/><circle cx="843" cy="335" r="2" fill="#80604f"/>
+  </g>
+  <text
+     class="blue-label"
+     x="853"
+     y="299"
+     id="text23">Substrate</text>
+  <text
+     class="blue-label"
+     x="853"
+     y="329"
+     id="text24">availability</text>
+  <rect
+     x="308.93494"
+     y="445.03662"
+     width="336.02847"
+     height="114.92677"
+     rx="18.9016"
+     fill="#e8f3e9"
+     stroke="#a7cbb4"
+     stroke-width="3.07324"
+     id="rect24" />
+  <path
+     d="m 343,524 c -6,-34 11,-50 44,-52 -1,31 -16,51 -44,52 z"
+     fill="#93c5a5"
+     stroke="#3f9576"
+     stroke-width="4"
+     id="path24" />
+  <path
+     d="m 343,523 c 12,-19 24,-34 39,-42"
+     fill="none"
+     stroke="#3f9576"
+     stroke-width="4"
+     id="path25" />
+  <text
+     class="green-label"
+     x="416"
+     y="478"
+     id="text25">Thermal</text>
+  <text
+     class="green-label"
+     x="416"
+     y="507"
+     id="text26">acclimation of</text>
+  <text
+     class="green-label"
+     x="416"
+     y="536"
+     id="text27">plant respiration</text>
+  <rect
+     x="755.03662"
+     y="445.03662"
+     width="336.02847"
+     height="114.92677"
+     rx="18.9016"
+     fill="#e8f3e9"
+     stroke="#a7cbb4"
+     stroke-width="3.07324"
+     id="rect27" />
+  <g id="microbial-icon" aria-label="Microbial cells">
+    <circle cx="802" cy="503" r="31" fill="#f5faf3" stroke="#3f9576" stroke-width="3.5"/>
+    <rect x="785" y="480" width="10" height="25" rx="5" transform="rotate(-24 790 492)" fill="#7bb59a" stroke="#287453" stroke-width="2"/>
+    <rect x="806" y="478" width="10" height="22" rx="5" transform="rotate(27 811 489)" fill="#9ccdb1" stroke="#287453" stroke-width="2"/>
+    <rect x="794" y="506" width="11" height="23" rx="5.5" transform="rotate(55 799.5 517.5)" fill="#7bb59a" stroke="#287453" stroke-width="2"/>
+    <circle cx="816" cy="514" r="4.5" fill="#d49c61"/><circle cx="780" cy="512" r="3.5" fill="#d49c61"/><circle cx="801" cy="493" r="3" fill="#d49c61"/>
+  </g>
+  <text
+     class="green-label"
+     x="846"
+     y="478"
+     id="text30"
+     style="white-space:pre;inline-size:277.2"
+     xml:space="preserve"><tspan
+       x="846"
+       y="478"
+       id="tspan4">Thermal 
+</tspan><tspan
+       x="846"
+       y="508"
+       id="tspan5">adaptation of 
+</tspan><tspan
+       x="846"
+       y="538"
+       id="tspan6">microbial respiration</tspan></text>
+  <text
+     class="green-label"
+     x="846"
+     y="536"
+     id="text32" />
+  <!-- Four compass-point nodes on the oval, echoing the first figure's rounded labels. -->
+  <rect
+     x="600"
+     y="66"
+     width="200"
+     height="66"
+     rx="33"
+     fill="#fae4dc"
+     stroke="#c26546"
+     stroke-width="3"
+     id="rect32" />
+  <text
+     x="700"
+     y="94"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="25"
+     font-weight="750"
+     id="text33">Global</text>
+  <text
+     x="700"
+     y="122"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="25"
+     font-weight="750"
+     id="text34">warming</text>
+  <rect
+     x="67"
+     y="370"
+     width="187"
+     height="64"
+     rx="32"
+     fill="#fae4dc"
+     stroke="#c26546"
+     stroke-width="3"
+     id="rect34" />
+  <text
+     x="160"
+     y="397"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="22"
+     font-weight="750"
+     id="text35">Atmospheric</text>
+  <text
+     x="160"
+     y="423"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="26"
+     font-weight="750"
+     id="text36">CO₂</text>
+  <rect
+     x="1146"
+     y="370"
+     width="195"
+     height="64"
+     rx="32"
+     fill="#fae4dc"
+     stroke="#c26546"
+     stroke-width="3"
+     id="rect36" />
+  <text
+     x="1243"
+     y="396"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="23"
+     font-weight="750"
+     id="text37">No</text>
+  <text
+     x="1243"
+     y="423"
+     text-anchor="middle"
+     fill="#a84d34"
+     font-size="23"
+     font-weight="750"
+     id="text38">acclimation</text>
+  <rect
+     x="541"
+     y="618"
+     width="318"
+     height="62"
+     rx="31"
+     fill="#bd6045"
+     id="rect38" />
+  <text
+     x="700"
+     y="657"
+     text-anchor="middle"
+     fill="#ffffff"
+     font-size="23px"
+     font-weight="750"
+     id="text39">Respiratory CO₂ release</text>
+  <line
+     x1="67"
+     y1="692"
+     x2="1335"
+     y2="692"
+     stroke="#d5ded9"
+     stroke-width="1.5"
+     id="line39" />
+  <a
+     href="https://doi.org/10.1016/S1360-1385(03)00136-5"
+     target="_blank"
+     id="a40">
+    <text
+       x="67"
+       y="724"
+       fill="#577074"
+       font-size="20px"
+       id="text40">Figure design inspired by Fig. 3 in Atkin and Tjoelker. Trends in Plant Science, 2003.</text>
+  </a>
+  <text
+     xml:space="preserve"
+     id="text42"
+     style="fill:none;stroke-width:1.88976378;-inkscape-font-specification:'Aptos, Aptos_MSFontService, sans-serif Bold';font-family:Aptos, Aptos_MSFontService, sans-serif;font-size:8.66666667px;stroke-opacity:0.81960797;fill-opacity:0;text-align:center;font-weight:bold;stroke:#1a1a1a;white-space:pre;shape-inside:url(#rect42)" />
+</svg>

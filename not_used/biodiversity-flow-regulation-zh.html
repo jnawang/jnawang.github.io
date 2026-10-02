@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="hnezltECOPgH89KsqbTnHI">
+<head data-page-node-id="K02lyIjFoiCiYtKqSRsmEP">
+  <meta charset="utf-8" data-page-node-id="pF95lA6STyf0gp5bEebCdr">
+  <meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="QTJTcsGQyDy76NuWuTg6LC">
+  <meta name="description" content="王君娜关于生物多样性、生态流量、水库调度以及受调控河流中鱼类繁殖响应的研究。" data-page-node-id="8f79GfbnjWjXpAuentnhBZ">
+  <title>生物多样性与水流调控 — Junna Wang</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #3e5a60;
+      --river: #0f4b55;
+      --deep: #0b3540;
+      --water: #89afb1;
+      --wetland: #718064;
+      --sediment: #b4874d;
+      --paper: #f3efe6;
+      --paper-bright: #faf8f2;
+      --line: rgba(18, 54, 64, .18);
+      --serif: "Songti SC", STSong, "Noto Serif CJK SC", SimSun, Georgia, serif;
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 400 1rem/1.68 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 1rem; color: var(--sediment); font-size: .75rem; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    .section-title { margin: 0; font: 400 clamp(2.35rem, 5vw, 4.5rem)/1.12 var(--serif); letter-spacing: -.015em; }
+    .section-lede { max-width: 720px; margin: 1.35rem 0 0; color: var(--ink-soft); font-size: 1.08rem; }
+    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: rgba(243,239,230,.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; font: 600 1.02rem/1 var(--serif); letter-spacing: .25em; text-transform: uppercase; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.3rem); }
+    .nav-links a { text-decoration: none; font-size: .82rem; font-weight: 650; }
+    .nav-links a:hover { color: var(--sediment); }
+    .back-link { padding: .64rem .9rem; border: 1px solid var(--ink); }
+    .back-link:hover { color: var(--paper-bright) !important; background: var(--ink); }
+    .menu-toggle { display: none; width: 46px; height: 44px; border: 1px solid var(--line); color: var(--ink); background: transparent; font: inherit; cursor: pointer; }
+
+    .topic-hero {
+      min-height: calc(100svh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy { align-self: center; padding: clamp(5rem, 9vw, 8.5rem) clamp(2.5rem, 5vw, 6rem) 4rem max(1.5rem, calc((100vw - var(--max)) / 2)); }
+    .topic-index { display: inline-grid; place-items: center; width: 56px; height: 56px; margin-bottom: 2rem; border: 1px solid var(--line); border-radius: 50%; color: var(--sediment); font: italic 1rem var(--serif); }
+    h1 { max-width: 760px; margin: 0; font: 400 clamp(3.6rem, 6.8vw, 7.3rem)/1.02 var(--serif); letter-spacing: -.02em; }
+    .hero-lede { max-width: 650px; margin: 2rem 0 0; color: var(--ink-soft); font-size: clamp(1.05rem, 1.45vw, 1.3rem); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2.5rem; }
+    .hero-meta span { padding: .52rem .72rem; border: 1px solid var(--line); background: rgba(250,248,242,.36); font-size: .72rem; font-weight: 700; letter-spacing: .1em; }
+    .hero-visual { position: relative; min-height: 720px; overflow: hidden; background: linear-gradient(90deg, var(--paper), rgba(243,239,230,.15) 15%, transparent 45%), linear-gradient(180deg, rgba(8,42,50,.04), rgba(8,42,50,.48)), url("assets/river-estuary-hero.png") 55% center/cover no-repeat, var(--water); }
+    .hero-visual::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg, transparent, #000 35%); }
+    .hero-note { position: absolute; right: 3rem; color: white; font-size: .7rem; font-weight: 700; letter-spacing: .15em; line-height: 1.6; text-shadow: 0 2px 18px rgba(0,0,0,.3); }
+    .hero-note.top { top: 3rem; }
+    .hero-note.bottom { bottom: 3rem; }
+    .pulse { position: absolute; left: 20%; right: 7%; bottom: 22%; height: 130px; }
+    .pulse svg { width: 100%; height: 100%; overflow: visible; }
+
+    .metrics { border-bottom: 1px solid var(--line); background: var(--paper-bright); }
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .metric { min-height: 180px; padding: 2.4rem; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; margin-bottom: .6rem; font: 400 clamp(2.4rem, 5vw, 4.6rem)/1 var(--serif); }
+    .metric span { color: var(--ink-soft); font-size: .8rem; font-weight: 700; letter-spacing: .1em; }
+
+    section.content-section { padding: clamp(5.5rem, 9vw, 8.5rem) 0; border-bottom: 1px solid var(--line); }
+    .intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .intro-copy { font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.55; }
+    .intro-copy p { margin: 0 0 1.5rem; }
+    .intro-copy p:last-child { margin-bottom: 0; color: var(--ink-soft); font-size: 1rem; }
+
+    .mechanism-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1rem; margin-top: 3.5rem; }
+    .flow-figure { min-height: 560px; padding: clamp(1.5rem, 4vw, 3rem); color: white; background: var(--deep); }
+    .figure-kicker { margin: 0 0 2rem; color: rgba(255,255,255,.63); font-size: .72rem; font-weight: 700; letter-spacing: .15em; }
+    .figure-title { max-width: 520px; margin: 0; font: 400 clamp(2rem, 4vw, 3.7rem)/1.15 var(--serif); }
+    .hydrograph { margin-top: 4rem; }
+    .hydrograph text { fill: rgba(255,255,255,.7); font: 600 11px var(--sans); letter-spacing: .08em; }
+    .hydrograph .grid { stroke: rgba(255,255,255,.13); }
+    .hydrograph .natural { fill: none; stroke: #d5ad70; stroke-width: 4; }
+    .hydrograph .regulated { fill: none; stroke: #93bec2; stroke-width: 4; stroke-dasharray: 9 8; }
+    .legend { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; color: rgba(255,255,255,.72); font-size: .78rem; }
+    .legend span::before { content: ""; display: inline-block; width: 24px; height: 3px; margin-right: .5rem; vertical-align: middle; background: #d5ad70; }
+    .legend span:last-child::before { background: #93bec2; }
+    .process-list { display: grid; gap: 1rem; }
+    .process-card { min-height: 172px; display: grid; grid-template-columns: 46px 1fr; gap: 1.1rem; padding: 1.6rem; border: 1px solid var(--line); background: rgba(250,248,242,.56); }
+    .process-card .number { color: var(--sediment); font: italic 1rem var(--serif); }
+    .process-card h3 { margin: 0 0 .55rem; font: 400 1.45rem/1.2 var(--serif); }
+    .process-card p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
+
+    .case-study { background: #e9e5da; }
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .case-copy p { color: var(--ink-soft); }
+    .evidence-list { margin: 2.2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .evidence-list li { display: grid; grid-template-columns: 42px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .evidence-list strong { color: var(--sediment); font: italic 1rem var(--serif); }
+    .evidence-list span { color: var(--ink-soft); }
+    .finding { padding: clamp(2rem, 4vw, 3.5rem); border: 1px solid var(--line); background: var(--paper-bright); }
+    .finding blockquote { margin: 0; font: 400 clamp(1.75rem, 3.6vw, 3rem)/1.32 var(--serif); letter-spacing: -.01em; }
+    .finding p { margin: 2rem 0 0; color: var(--ink-soft); }
+
+    .methods-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3.5rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .method { min-height: 240px; padding: 1.6rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .method small { color: var(--sediment); font-weight: 700; letter-spacing: .12em; }
+    .method h3 { margin: 2.4rem 0 .65rem; font: 400 1.4rem/1.2 var(--serif); }
+    .method p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+
+    .recommendation { color: white; background: var(--river); }
+    .recommendation-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 8rem); }
+    .recommendation .eyebrow { color: #d9b87e; }
+    .recommendation .section-lede { color: rgba(255,255,255,.72); }
+    .release-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(255,255,255,.22); border-left: 1px solid rgba(255,255,255,.22); }
+    .release-item { min-height: 180px; padding: 1.6rem; border-right: 1px solid rgba(255,255,255,.22); border-bottom: 1px solid rgba(255,255,255,.22); }
+    .release-item strong { display: block; margin-bottom: .7rem; font: 400 clamp(1.8rem, 3vw, 2.7rem)/1 var(--serif); }
+    .release-item span { color: rgba(255,255,255,.7); font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
+    .caveat { margin: 1.5rem 0 0; color: rgba(255,255,255,.62); font-size: .78rem; }
+
+    .paper-card { display: grid; grid-template-columns: 100px 1fr auto; gap: 2rem; align-items: start; padding: 2.2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .paper-year { color: var(--sediment); font: 400 2.5rem/1 var(--serif); }
+    .paper-card h3 { margin: 0; font: 400 clamp(1.5rem, 3vw, 2.4rem)/1.3 var(--serif); }
+    .paper-card p { margin: .8rem 0 0; color: var(--ink-soft); }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: .6rem; padding: .78rem 1rem; border: 1px solid var(--ink); text-decoration: none; font-size: .82rem; font-weight: 700; white-space: nowrap; transition: color .2s ease, background .2s ease, transform .2s ease; }
+    .button:hover { color: white; background: var(--ink); transform: translateY(-2px); }
+
+    footer { padding: 2.2rem 0; color: white; background: var(--deep); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: .8rem; }
+    .footer-name { font-family: var(--serif); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: #d9b87e; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links { position: absolute; top: 76px; left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 1rem 1.5rem 1.5rem; border-bottom: 1px solid var(--line); background: var(--paper-bright); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .9rem 0; border-bottom: 1px solid var(--line); }
+      .nav-links .back-link { margin-top: 1rem; padding: .8rem 1rem; text-align: center; border: 1px solid var(--ink); }
+      .topic-hero { min-height: auto; grid-template-columns: 1fr; }
+      .hero-copy { padding: 6rem max(1.5rem, calc((100vw - var(--max)) / 2)) 4rem; }
+      .hero-visual { min-height: 63vw; }
+      .intro-grid, .mechanism-grid, .case-grid, .recommendation-grid { grid-template-columns: 1fr; }
+      .methods-grid { grid-template-columns: repeat(2, 1fr); }
+      .paper-card { grid-template-columns: 80px 1fr; }
+      .paper-card .button { grid-column: 2; justify-self: start; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 2rem), var(--max)); }
+      .nav { min-height: 68px; }
+      .nav-links { top: 68px; }
+      .brand { font-size: .88rem; letter-spacing: .19em; }
+      .hero-copy { padding: 4.5rem 1rem 3.5rem; }
+      h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
+      .hero-visual { min-height: 90vw; }
+      .hero-note { display: none; }
+      .metrics-grid, .methods-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .release-grid { grid-template-columns: 1fr; }
+      .paper-card { grid-template-columns: 1fr; }
+      .paper-card .button { grid-column: 1; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body data-page-node-id="SkEcRXnxLRtrK1q4ZcpdFm">
+  <header class="site-header" data-page-node-id="FGml4pIOaD4GOCe1OSuasr">
+    <div class="container nav" data-page-node-id="HP54GAKBCbd8gn4iHVMyZT">
+      <a class="brand" href="index-zh.html" data-page-node-id="AWBEV8xxmVdNbOd3xHxkPX">Junna Wang</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="打开导航" data-page-node-id="roQDz0X9jCw34KNhZayxbD">菜单</button>
+      <nav class="nav-links" id="navigation" aria-label="主导航" data-page-node-id="NDX0Pb0ooBhDtmHcdnSoSE">
+        <a href="#overview" data-page-node-id="o3eiw2qIrbgYOdiFIjqStn">概览</a>
+        <a href="#mechanisms" data-page-node-id="7FjOH6vx6VMyonnTeWGO98">机制</a>
+        <a href="#case-study" data-page-node-id="8bBaUCRGTC7vtNbdm7xeJI">案例研究</a>
+        <a href="#methods" data-page-node-id="GPRYyXSzAFTQpqi1SkRFB0">方法</a>
+        <a href="#publication" data-page-node-id="6oEhpxIGoCXJlMB7ViMfIA">论文</a>
+        <a href="biodiversity-flow-regulation.html" lang="en" data-page-node-id="dbM52RsBqgLZmTbOEXw9Mp">English</a>
+        <a class="back-link" href="index-zh.html" data-page-node-id="4hnDuMSJhREjTu2baEb3AN">← 返回主站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main data-page-node-id="LqLytJYXTqdyVbdgePWN2e">
+    <section class="topic-hero" aria-labelledby="page-title" data-page-node-id="d8fOIUKWnGHSOyWhxSNiEB">
+      <div class="hero-copy reveal" data-page-node-id="tGEKgDTiuXt2i9BEdG6FVZ">
+        <span class="topic-index" data-page-node-id="z0APWu0cEl2D3Z0mnp9UBU">02</span>
+        <p class="eyebrow" data-page-node-id="zJbVgcVMXhdKOFb0wz1YVx">研究主题</p>
+        <h1 id="page-title" data-page-node-id="RH6biESzOOIJPNPUDWVnxE">生物多样性与水流调控</h1>
+        <p class="hero-lede" data-page-node-id="p5nbMUKvsjAdchw53rKVne">理解水坝、生态流量与变化的水温情势如何重塑水生生物繁殖与存续所需的条件。</p>
+        <div class="hero-meta" data-page-node-id="zHG5DAl5kqUsHqW3xNqDFu"><span data-page-node-id="Xzz3e4XESdOjiYlM1qxYGm">生态流量</span><span data-page-node-id="5KiPzDgDTOMaryqdsgN32P">鱼类繁殖</span><span data-page-node-id="4OKTozRvVefMgsCLCm0hDN">受调控河流</span><span data-page-node-id="blpXiuWsd1epXXukMAGjON">生态水文学</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="河流与河口景观航拍图，叠加概念性流量脉冲曲线" data-page-node-id="NMHgEptVmLKisYBMdasTCv">
+        <p class="hero-note top" data-page-node-id="vnSeHTkDvQRamcdSCIVpRY">流量<br data-page-node-id="WriPknJudAFboXgN5GYYRd">水温<br data-page-node-id="ZOfgBSToUf1DhSQEgvJS7K">时机<br data-page-node-id="c9duGvIEuHoRv7IUpYmsTH">历时</p>
+        <div class="pulse" aria-hidden="true" data-page-node-id="2i6cynPOOBA2sf2tAlXpRt">
+          <svg viewBox="0 0 800 130" preserveAspectRatio="none" data-page-node-id="mfkPFIA0JF4h2nkVmsbJUl">
+            <path d="M0 104 C95 102 116 96 154 92 C196 87 217 19 276 22 C342 25 347 91 415 89 C490 87 497 47 548 45 C603 43 626 94 800 89" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3" data-page-node-id="9nHABCb7XZAotYce22c71b"/>
+            <path d="M0 117H800" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1" data-page-node-id="AY5Ph9xGK3XlBd3K19Gfgt"/>
+          </svg>
+        </div>
+        <p class="hero-note bottom" data-page-node-id="B9vORXpQxtLP3HkRWR6Xl6">为生态机遇<br data-page-node-id="Fe0Y55DaFtUyjJNMjjz4OR">而管理水量</p>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="案例研究概览" data-page-node-id="IdIPY9vCSdSAdYdnfIkIlE">
+      <div class="container metrics-grid reveal" data-page-node-id="KjGHPhdTZxUU36Gfg4DJB6">
+        <div class="metric" data-page-node-id="q2vfdY8cXEsxS3j6cuRLG6"><strong data-page-node-id="8fz8OEqGlmLhh4tFmU9Wgi">13</strong><span data-page-node-id="bIyrinQrdZFSHlYWIbeEhh">年记录 · 1997–2009</span></div>
+        <div class="metric" data-page-node-id="FOnspHvm7o7OL7CiqbQWNM"><strong data-page-node-id="xBzPDwz9q4BGSCbMGvzP9h">4</strong><span data-page-node-id="B30YGGnEsMaMNeOJcn7NpZ">种主要中国鲤科鱼类</span></div>
+        <div class="metric" data-page-node-id="bsbkBNveh7YWRAZ0OAlEJc"><strong data-page-node-id="HqUN4XxeXNRHkKuOf9VqEN">建坝前 / 后</strong><span data-page-node-id="BIujF3lI4WbboI47GZ33CL">对比分析</span></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="overview" aria-labelledby="overview-title" data-page-node-id="VC5zhE8qVxLviPI5uA2UcM">
+      <div class="container intro-grid reveal" data-page-node-id="18p7obJO2qd1Kj7wDuYCfF">
+        <div data-page-node-id="Vaw0faN8MFheomOXA9kciG"><p class="eyebrow" data-page-node-id="fzM9zYY6Y65nJ5mMxDF9yx">核心问题</p><h2 class="section-title" id="overview-title" data-page-node-id="GVgXs2bBuBpMZ87FmHtKcW">当河流被调控，生态时机会发生什么？</h2></div>
+        <div class="intro-copy" data-page-node-id="4EwKQzIDVJn3BGetAiSavx">
+          <p data-page-node-id="URlkRDsuPF0ETUyMlyp9VN">河流流量不只是水向下游流动。其季节性的起涨、历时、量级与水温共同构成生物信号，指引洄游、繁殖、种群补充与食物网动态的发生。</p>
+          <p data-page-node-id="Ie3e8ypd3gec6URXxrCmXA">水库调度会改变这些信号。本研究将水文改变与生态响应联系起来，进而探讨如何在满足人类用水需求的同时，让水量调度更好地支撑生物多样性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="mechanisms" aria-labelledby="mechanisms-title" data-page-node-id="I4OtFNRRh6iAK5TGroluox">
+      <div class="container" data-page-node-id="UczyBHcKbRYRXSNPBsJQLQ">
+        <p class="eyebrow reveal" data-page-node-id="91U4N4Mx25kvlyhGLOVxF0">水流—生态关系</p>
+        <h2 class="section-title reveal" id="mechanisms-title" data-page-node-id="aweBz0j1d4W21DkPn1CinZ">从调度到生物</h2>
+        <p class="section-lede reveal" data-page-node-id="ZAyN53jygaQ5eO2j39FyEt">受调控的水文过程线会同时改变多个环境维度。生态响应取决于这些维度的交互作用，而不只是流量本身。</p>
+        <div class="mechanism-grid" data-page-node-id="WDlGBQwUKOR7JQqHk4jJl8">
+          <div class="flow-figure reveal" data-page-node-id="wXaigBZed4kqbdDYDdiLh5">
+            <p class="figure-kicker" data-page-node-id="tfjBhBjnLO3Q9Epyp5ULZz">概念性水文过程线 · 非等比绘制</p>
+            <h3 class="figure-title" data-page-node-id="1ZHWGL0JvBGjCbFpkGtrUs">生态机遇源自流量脉冲的形态与时机。</h3>
+            <svg class="hydrograph" viewBox="0 0 700 250" role="img" aria-label="自然与调控状态下季节性流量脉冲的概念性对比" data-page-node-id="Q6J1yraD6LDlfCtdvUcCll">
+              <path class="grid" d="M55 25V210H680M55 70H680M55 115H680M55 160H680M180 25V210M305 25V210M430 25V210M555 25V210" fill="none" data-page-node-id="hQoACW3jbGAfAXiVoLKGaV"/>
+              <path class="natural" d="M55 188 C140 184 167 178 210 167 C258 154 272 55 342 48 C417 41 419 153 494 160 C560 166 592 177 680 180" data-page-node-id="NW8m8sNqUSnn2AuvtCWDAP"/>
+              <path class="regulated" d="M55 181 C164 180 194 155 256 147 C318 139 349 115 401 114 C458 113 505 145 680 152" data-page-node-id="jxqCZ8WvjK3OgCf8iAc2Ac"/>
+              <text x="8" y="32" data-page-node-id="EGVEgEF3aWNpoVNi2H0cNI">流量</text><text x="600" y="232" data-page-node-id="HR22x6peU53QAfnAz5GXQ9">季节</text>
+            </svg>
+            <div class="legend" data-page-node-id="ux3JOqhFHAy3rwq6Bjrlc7"><span data-page-node-id="eocEEyL0peIc941cmIyhg6">季节性脉冲</span><span data-page-node-id="nioLTehkESITSPKW3H4hHc">调控后模式</span></div>
+          </div>
+          <div class="process-list" data-page-node-id="QXCjHYLxMoDYxwASPpTzFA">
+            <article class="process-card reveal" data-page-node-id="tS24SQCxCBOMvV3o6MPTO0"><span class="number" data-page-node-id="ua7Rb68Asm21cQBnF0YXMq">01</span><div data-page-node-id="KJr2BPDyBx7nqZzqAerUg4"><h3 data-page-node-id="0MAdANqCWt4qSwrBfl5N1f">水文信号</h3><p data-page-node-id="GYDjKcpGnBm34JYxzNbCQE">涨水的时机、历时、涨水速率与量级，决定了某次流量事件能否提供可用的繁殖信号。</p></div></article>
+            <article class="process-card reveal" data-page-node-id="ihlgaka5ojXeGWGwJE29M4"><span class="number" data-page-node-id="3V3p8HnIQdA7XG5RVF0A7r">02</span><div data-page-node-id="wxQCbPD0p7ZqWlgmGSFI8G"><h3 data-page-node-id="jfbASCBRHPZ93DmDttu71W">水温背景</h3><p data-page-node-id="qMJYA8ZdwMAD4s0yvpuMcj">水温影响鱼类的繁殖准备程度，并会改变鱼类对涨水作出响应的季节窗口。</p></div></article>
+            <article class="process-card reveal" data-page-node-id="HNCgm2Rbudh1JfM6uqSBfz"><span class="number" data-page-node-id="W5cTBG1KatHkWYPrVQ0Rbb">03</span><div data-page-node-id="KK1XWc6OMDEHTMEGGdqWaU"><h3 data-page-node-id="KRbbCik8RAQLDEUfZtHWcH">生物响应</h3><p data-page-node-id="xgLI4IuGHyZV7BAU11WQOT">繁殖行为、卵与仔鱼的输移、生境可达性以及种群补充，反映的是综合的环境信号。</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section case-study" id="case-study" aria-labelledby="case-title" data-page-node-id="TNpC0YDxxv4dSd5enqjKLO">
+      <div class="container case-grid" data-page-node-id="brpufGBsXJfp3tltER8ruk">
+        <div class="case-copy reveal" data-page-node-id="jKnusCUD8bAwQpWiMd0WtW">
+          <p class="eyebrow" data-page-node-id="2BrOtlKEr4QPeMkRv5u9EV">长江案例研究</p>
+          <h2 class="section-title" id="case-title" data-page-node-id="DAejAtkh0j2WOYHwwIGwZu">鱼类繁殖对三峡大坝的响应</h2>
+          <p data-page-node-id="be4kJTe1HoZ5W105biOeaz">研究分析了跨越建坝前 7 年与建坝后 6 年、共 13 年的记录，识别在河流受调控之后，与仔鱼丰度相关的环境因素发生了怎样的变化。</p>
+          <ul class="evidence-list" data-page-node-id="d6LGQvkDP7UvPL91NBnORS">
+            <li data-page-node-id="PKeDcOAm1DLY3ggA8YS8Eg"><strong data-page-node-id="t4oDaFLhDZYRomh33vYGdO">01</strong><span data-page-node-id="RKsmCUh9W6hVXMMSyMw8je">调控之前，涨水的历时与涨水速率是显著因素。</span></li>
+            <li data-page-node-id="iaYN4kHGCECaEZvL6JKbA7"><strong data-page-node-id="2BSy4bimrEsBwvsAVlimMc">02</strong><span data-page-node-id="Nhcx5tONCWUQrVQxWp8btp">调控之后，涨水的时机成为最显著的因素。</span></li>
+            <li data-page-node-id="GsEu87KImm9zOr6BMxu9W8"><strong data-page-node-id="AqJHQwbnNFHWkjO9WRdsO6">03</strong><span data-page-node-id="iSpjpqNBj1A250vp3NVrNE">水温成为显著因素，而涨水速率不再被识别为显著因素。</span></li>
+          </ul>
+        </div>
+        <aside class="finding reveal" data-page-node-id="ejRG7LAvf8bLTtiLHsWXHl">
+          <p class="eyebrow" data-page-node-id="cDKWqm6ZTAAybsCD63BnoI">核心解读</p>
+          <blockquote data-page-node-id="ZyGKwIDM7IHGDmZAmgYgsS">如果鱼类已经改变了响应的时机与方式，那么仅仅恢复一个“看起来自然”的流量脉冲是不够的。</blockquote>
+          <p data-page-node-id="ta4U22IaBHRhcUXiycS8JR">该研究表明，生态流量的设计应当考虑生物对已改变的水温与水流情势所作出的适应性响应。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section" id="methods" aria-labelledby="methods-title" data-page-node-id="qiHtlvLzoIR2SLnzzDEDkD">
+      <div class="container" data-page-node-id="HNoo0pt0H00z9YGEcLgwJy">
+        <p class="eyebrow reveal" data-page-node-id="LG8KCZqCP6pMuaC3hAkq6a">研究路径</p>
+        <h2 class="section-title reveal" id="methods-title" data-page-node-id="V2q0A0BxXKBFPWwC2CRDEK">将长期观测与调度决策联系起来</h2>
+        <div class="methods-grid" data-page-node-id="hcXJs4A87Iif28gWmEKuhe">
+          <article class="method reveal" data-page-node-id="jsEW1JEkycT1npU2Pk1JrE"><small data-page-node-id="bqw5tsjA84W78mRD0W4KYp">01</small><h3 data-page-node-id="dAXuyi0hw2uQpwTbEmQ1uE">长期生态记录</h3><p data-page-node-id="G3JFjFyTCGKKFJrk7V2ZVW">覆盖多个年份与多种水文条件的仔鱼丰度和繁殖观测数据。</p></article>
+          <article class="method reveal" data-page-node-id="vmzzJ3G3pxC8rSqEavtdHe"><small data-page-node-id="ss8lvNS2FxBkQiyh2C2Ufs">02</small><h3 data-page-node-id="RfJkI2R79AsPkzFKxTtNkm">水文气候背景</h3><p data-page-node-id="v31EcmQymZRrjlEILaTLab">涨水时机、涨水速率、事件历时、流量与水温。</p></article>
+          <article class="method reveal" data-page-node-id="4Piw7OsIM8Xc3g1oJfyxLw"><small data-page-node-id="EMtAjnnXgIeVF5oSEe5dkP">03</small><h3 data-page-node-id="MeUdSxQPRHSPXzAQFhDxOs">遗传编程</h3><p data-page-node-id="UGundwu9CpmUFT0pwXSNc2">以数据驱动的方式识别显著因素与非线性生态关系。</p></article>
+          <article class="method reveal" data-page-node-id="YenCPiSqY8Zo1GFoovmE8Y"><small data-page-node-id="iJXb12JhZA5clhPptBoaaI">04</small><h3 data-page-node-id="20wNCiqEEBOznTmL41AEMG">建坝前后对比</h3><p data-page-node-id="SpXDjTxIK0gQWhQB8M2BW3">评估调控之后主导控制因素与生物响应如何发生变化。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section recommendation" aria-labelledby="release-title" data-page-node-id="55j7c2azgCECN82GdqK8jv">
+      <div class="container recommendation-grid" data-page-node-id="2E6pBtG6qLFDjG8ZD0yl2U">
+        <div class="reveal" data-page-node-id="HsU5SmTTxnH4Gds20cFWbD"><p class="eyebrow" data-page-node-id="bpuSMte3W4PPLGGAqIRaLy">管理启示</p><h2 class="section-title" id="release-title" data-page-node-id="7Eg4pBmzzmgDSpCe2jhp6P">围绕生态窗口设计泄流。</h2><p class="section-lede" data-page-node-id="cE99grG9Exgzwpc2v16aHL">该研究把观测到的水流—生态关系，转化为支撑四大家鱼繁殖的候选调度窗口。</p></div>
+        <div class="reveal" data-page-node-id="ndHt3obJ4cNOUSezBw0LCi">
+          <div class="release-grid" data-page-node-id="hEPbE65xd0mwP4EQk6D6TM">
+            <div class="release-item" data-page-node-id="wtv2hjBNBWNJMlJkEFfiLN"><strong data-page-node-id="FPthXxHYAiBpclbnkyrhFg">≥ 5 天</strong><span data-page-node-id="Br7yiLLbC6GVGFybTnYjy5">涨水历时</span></div>
+            <div class="release-item" data-page-node-id="zLeJweTN1E4JANjVzyLZAK"><strong data-page-node-id="l23usNgfXSKEU7UlzXWd6F">900–3,000</strong><span data-page-node-id="r8oxDJ7dwYROMpmH2lqaAD">涨水速率 · m³ s⁻¹ day⁻¹</span></div>
+            <div class="release-item" data-page-node-id="xHDlBIs0F2PDIhIcvX2AWa"><strong data-page-node-id="fUFUZRnUmNh8y0tSmzLC1k">≤ 30,000</strong><span data-page-node-id="MnNqnPNeFtwITF0tNgiAVI">流量 · m³ s⁻¹</span></div>
+            <div class="release-item" data-page-node-id="j5YQI7gbHGK7GeIoVFTzod"><strong data-page-node-id="V9TAnE1nXlUZiWTtS8ouwd">&lt; 25°C</strong><span data-page-node-id="ViZjPPvv8eYluks3PNN8yV">水温</span></div>
+          </div>
+          <p class="caveat" data-page-node-id="Y8zGtF1NnMDF0Onv815M6j">研究报告的建议：在 6 月 15 日至 7 月 20 日之间至少实施一次符合上述条件的泄流。实际调度应用需结合当前监测数据、系统约束与适应性评估。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="publication" aria-labelledby="publication-title" data-page-node-id="0HF6bK9JArPwNuW7igwG6w">
+      <div class="container" data-page-node-id="mRnPuwjkw6PJ53mCe7Fz8A">
+        <p class="eyebrow reveal" data-page-node-id="DC4n2F1vo6A7k7aaw0QfBI">代表性论文</p>
+        <h2 class="section-title reveal" id="publication-title" data-page-node-id="1csyjLKiLgiDkCcAGh4vb7">阅读研究</h2>
+        <article class="paper-card reveal" data-page-node-id="1F09iDMrmqGKGC87GZ6RaV">
+          <div class="paper-year" data-page-node-id="LHP0uYAaTA4SebqctmpdXM">2014</div>
+          <div data-page-node-id="gFBWDNcqJdtdllvWStd2qp"><h3 data-page-node-id="2iOefozO5YJ0YU8dqVohft">影响四种主要中国鲤科鱼类仔鱼丰度的显著环境因子的变化：鱼类繁殖对三峡大坝的响应</h3><p data-page-node-id="PtkfkziqDefR9D7EvPa5t4">王君娜、李翀、段辛斌、陈大庆、冯顺新、骆辉煌、彭期冬、廖文根 · Freshwater Biology 59(7), 1343–1360.</p></div>
+          <a class="button" href="https://onlinelibrary.wiley.com/doi/10.1111/fwb.12348" target="_blank" rel="noreferrer" data-page-node-id="C6ZCVkJp6qOFmUJPIHefsC">查看论文 ↗</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer data-page-node-id="pnXGwOCux0RVDrryos7SKU">
+    <div class="container footer-inner" data-page-node-id="2Cw1IYOfbJ0BGB8Xwp5LyB">
+      <div data-page-node-id="DMuraydvMV3TmLAQWGapSU"><span class="footer-name" data-page-node-id="J6qQ0I6SABQBCkczfbj3dd">Junna Wang</span> · 耶鲁大学</div>
+      <div class="footer-links" data-page-node-id="cgobwDlVqKKQD3pXtrU5Iy"><a href="index-zh.html" data-page-node-id="fVqUuc3grFKkU3Cc2LJobs">主站</a><a href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer" data-page-node-id="Co5FluCxcjDuFo4YEXjeNu">Google Scholar ↗</a><a href="#top" data-page-node-id="JV2DX9k8gWZ3gRuhz14vPU">返回顶部 ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navigation.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '关闭' : '菜单';
+    });
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navigation.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '菜单';
+      }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="586" height="464" viewBox="0 0 586 464" role="img" aria-label="Cottonwood seedling and water elevations over time">
+  <image href="eco-water-level-original.png" width="586" height="464" />
+  <!-- Hide only the clipped heading above the chart; preserve the plot and axes. -->
+  <rect x="125" y="0" width="330" height="9" fill="#fff" />
+</svg>

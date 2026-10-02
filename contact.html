@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Junna Wang, a cross-disciplinary scientist working in biodiversity and complex system science.">
+  <title>Contact Junna Wang</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #49666b;
+      --river: #0f4b55;
+      --water: #8eb5b6;
+      --climate: #bd884c;
+      --paper: #f3efe6;
+      --paper-light: #fbf9f3;
+      --line: rgba(18, 54, 64, .17);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1380px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 78% 28%, rgba(142, 181, 182, .18), transparent 25rem),
+        var(--paper);
+      font: 400 1rem/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .11;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 239, 230, .86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      width: min(calc(100% - 3rem), var(--max));
+      height: 100%;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .brand {
+      text-decoration: none;
+      font: 600 1rem/1.2 var(--serif);
+      letter-spacing: .055em;
+      white-space: nowrap;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(1rem, 2.2vw, 2rem);
+    }
+    .site-nav a {
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] { color: var(--climate); }
+    .site-nav .scholar-link {
+      padding: .52rem .72rem;
+      border: 1px solid var(--ink);
+    }
+    .site-nav .scholar-link:hover { color: var(--paper-light); background: var(--ink); }
+
+    .page {
+      min-height: calc(100svh - 72px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .contact-layout {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(520px, 1.28fr);
+      align-items: center;
+      gap: clamp(3rem, 8vw, 9rem);
+      padding: clamp(3rem, 8vh, 6rem) 0;
+    }
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--climate);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font: 400 clamp(3.8rem, 5.5vw, 6rem)/.92 var(--serif);
+      letter-spacing: -.055em;
+      white-space: nowrap;
+    }
+    .contact-list {
+      margin: 0;
+      border-top: 1px solid var(--line);
+      font-style: normal;
+    }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-label {
+      color: var(--ink-soft);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .contact-value {
+      margin: 0;
+      font: 400 clamp(1.12rem, 1.7vw, 1.5rem)/1.4 var(--serif);
+      overflow-wrap: anywhere;
+    }
+    .contact-value a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: .22em;
+    }
+    .contact-value a:hover { color: var(--climate); }
+    .contact-value a + a { display: block; margin-top: .45rem; }
+
+    .page-foot {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      padding: 1rem 0 1.2rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+      color: var(--ink-soft);
+      font-size: .76rem;
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 950px) {
+      .page { display: block; }
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        padding: 5rem 0 3rem;
+      }
+      h1 { font-size: clamp(3.8rem, 12vw, 6.5rem); }
+      .page-foot { margin-top: 1rem; }
+    }
+
+    @media (max-width: 760px) {
+      .site-header { height: auto; }
+      .header-inner, .contact-layout, .page-foot { width: min(calc(100% - 2rem), var(--max)); }
+      .header-inner {
+        min-height: 64px;
+        padding: .75rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .65rem;
+      }
+      .brand { font-size: .88rem; letter-spacing: .035em; }
+      .site-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1.15rem;
+        overflow-x: auto;
+        padding-bottom: .2rem;
+      }
+      .site-nav a { font-size: .74rem; }
+      .page { min-height: auto; }
+      .contact-layout { padding: 3.5rem 0 2rem; }
+      .contact-row { grid-template-columns: 1fr; gap: .45rem; }
+      .page-foot { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">Biodiversity &amp; Complex Systems Science</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="contact-layout" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1 id="contact-title">Junna Wang</h1>
+      </div>
+
+      <address class="contact-list">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <p class="contact-value">
+            <a href="mailto:junna.wang@yale.edu">junna.wang@yale.edu</a>
+            <a href="mailto:wangjunna2013@gmail.com">wangjunna2013@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">GitHub</span>
+          <p class="contact-value"><a href="https://github.com/jnawang" target="_blank" rel="noreferrer">jnawang</a></p>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Google Scholar</span>
+          <p class="contact-value"><a href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Junna Wang</a></p>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">LinkedIn</span>
+          <p class="contact-value"><a href="https://www.linkedin.com/in/junna-wang-80534b2b7/" target="_blank" rel="noreferrer">Junna Wang</a></p>
+        </div>
+      </address>
+    </section>
+
+    <footer class="page-foot">Biodiversity · Complex Adaptive System · Global Change</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" role="img" aria-labelledby="figure-title figure-desc">
+  <title id="figure-title">Terrestrial carbon–climate feedbacks</title>
+  <desc id="figure-desc">Human-caused carbon dioxide emissions increase atmospheric carbon dioxide and warming. On the left, carbon dioxide enrichment can increase photosynthetic uptake and land carbon storage, slowing the atmospheric increase. On the right, warming can lead to more fire emissions, plant respiration, and soil microbial respiration, all returning carbon dioxide to the atmosphere and amplifying warming.</desc>
+  <defs>
+    <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#173b46"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#318469"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#ba6249"/>
+    </marker>
+    <style>
+      text { font-family: Inter, Arial, Helvetica, sans-serif; }
+      .title { fill: #173b46; font-size: 37px; font-weight: 700; letter-spacing: -.025em; }
+      .section { font-size: 19px; font-weight: 800; letter-spacing: .09em; }
+      .node { fill: #173b46; font-size: 23px; font-weight: 650; }
+      .step { fill: #173b46; font-size: 21px; font-weight: 600; }
+      .small { fill: #4d6468; font-size: 16px; }
+      .credit { fill: #53696b; font-size: 15px; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="740" fill="#ffffff"/>
+  <text class="title" x="60" y="58">Terrestrial carbon–climate feedbacks</text>
+
+  <!-- Shared starting pathway -->
+  <rect x="60" y="91" width="284" height="82" rx="13" fill="#f0f4f5" stroke="#9bb3b6" stroke-width="2"/>
+  <text class="node" x="202" y="125" text-anchor="middle">Human-caused</text>
+  <text class="node" x="202" y="154" text-anchor="middle">CO₂ emissions</text>
+
+  <rect x="474" y="91" width="332" height="82" rx="13" fill="#e9f0f1" stroke="#173b46" stroke-width="2.5"/>
+  <text class="node" x="640" y="139" text-anchor="middle" font-size="26">Atmospheric CO₂ ↑</text>
+
+  <rect x="936" y="91" width="284" height="82" rx="13" fill="#fbede8" stroke="#ba6249" stroke-width="2.5"/>
+  <text class="node" x="1078" y="139" text-anchor="middle" font-size="26">Warming</text>
+
+  <path d="M355 132 H462" fill="none" stroke="#173b46" stroke-width="3" marker-end="url(#arrow-navy)"/>
+  <path d="M817 132 H925" fill="none" stroke="#173b46" stroke-width="3" marker-end="url(#arrow-navy)"/>
+
+  <!-- Feedback panels -->
+  <rect x="60" y="221" width="530" height="414" rx="18" fill="#f3f8f4" stroke="#b8d8c8" stroke-width="2"/>
+  <rect x="630" y="221" width="590" height="414" rx="18" fill="#fdf5f1" stroke="#edc9bb" stroke-width="2"/>
+  <text class="section" x="89" y="261" fill="#318469">DAMPENING FEEDBACK</text>
+  <text class="section" x="660" y="261" fill="#ba6249">AMPLIFYING FEEDBACK</text>
+
+  <!-- Left: uptake pathway -->
+  <path d="M565 181 C545 206 505 220 452 292" fill="none" stroke="#318469" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <rect x="98" y="294" width="454" height="55" rx="10" fill="#ffffff" stroke="#72b499" stroke-width="2"/>
+  <text class="step" x="325" y="329" text-anchor="middle">CO₂ enrichment</text>
+  <path d="M325 352 V374" fill="none" stroke="#318469" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <rect x="98" y="383" width="454" height="55" rx="10" fill="#ffffff" stroke="#72b499" stroke-width="2"/>
+  <text class="step" x="325" y="418" text-anchor="middle">Plant photosynthetic uptake ↑</text>
+  <path d="M325 441 V463" fill="none" stroke="#318469" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <rect x="98" y="472" width="454" height="55" rx="10" fill="#ffffff" stroke="#72b499" stroke-width="2"/>
+  <text class="step" x="325" y="507" text-anchor="middle">Potential land carbon storage ↑</text>
+  <path d="M325 530 V552" fill="none" stroke="#318469" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <rect x="98" y="561" width="454" height="51" rx="10" fill="#dceee3" stroke="#318469" stroke-width="2"/>
+  <text class="step" x="325" y="594" text-anchor="middle" fill="#24664f">Slower atmospheric CO₂ rise</text>
+
+  <!-- Right: three independent CO2-release pathways -->
+  <path d="M1078 181 V287 H725 M1078 287 H1125" fill="none" stroke="#ba6249" stroke-width="3"/>
+  <path d="M725 287 V312" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <path d="M925 287 V312" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <path d="M1125 287 V312" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <rect x="650" y="321" width="160" height="92" rx="10" fill="#ffffff" stroke="#d79b83" stroke-width="2"/>
+  <rect x="845" y="321" width="160" height="92" rx="10" fill="#ffffff" stroke="#d79b83" stroke-width="2"/>
+  <rect x="1040" y="321" width="160" height="92" rx="10" fill="#ffffff" stroke="#d79b83" stroke-width="2"/>
+  <text class="step" x="730" y="359" text-anchor="middle">Fire</text>
+  <text class="step" x="730" y="388" text-anchor="middle">emissions ↑</text>
+  <text class="step" x="925" y="359" text-anchor="middle">Plant</text>
+  <text class="step" x="925" y="388" text-anchor="middle">respiration ↑</text>
+  <text class="step" x="1120" y="349" text-anchor="middle">Soil microbial</text>
+  <text class="step" x="1120" y="378" text-anchor="middle">respiration ↑</text>
+
+  <path d="M730 416 L871 501" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <path d="M925 416 V501" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <path d="M1120 416 L979 501" fill="none" stroke="#ba6249" stroke-width="3" marker-end="url(#arrow-rust)"/>
+  <rect x="786" y="510" width="278" height="68" rx="10" fill="#f8dfd5" stroke="#ba6249" stroke-width="2.5"/>
+  <text class="step" x="925" y="538" text-anchor="middle" fill="#8c4635">More CO₂ returned</text>
+  <text class="step" x="925" y="565" text-anchor="middle" fill="#8c4635">to the atmosphere</text>
+  <text class="small" x="925" y="608" text-anchor="middle">Reinforces atmospheric warming</text>
+
+  <!-- Figure note and requested source credit -->
+  <line x1="60" y1="661" x2="1220" y2="661" stroke="#d6dfdc" stroke-width="1.5"/>
+  <text class="credit" x="60" y="686">Conceptual pathways; their strength depends on water availability, nutrients, acclimation, and disturbance.</text>
+  <a href="https://eos.org/features/the-future-of-the-carbon-cycle-in-a-changing-climate" target="_blank">
+    <text class="credit" x="60" y="714">Concept inspired by Figure 2 in Kaushik et al., Eos (2020), “The Future of the Carbon Cycle in a Changing Climate.”</text>
+  </a>
+</svg>

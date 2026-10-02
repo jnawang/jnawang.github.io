@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2200" viewBox="0 0 1800 2200" role="img" aria-labelledby="title desc">
+  <title id="title">Regime shifts in aquatic ecosystems and an algal-carbon-nutrient simulation model</title>
+  <desc id="desc">Conceptual lake and river regime-shift diagrams above a detailed algal, carbon, nutrient, and dissolved oxygen simulation model.</desc>
+  <rect width="1800" height="2200" fill="#f3f1ea"/>
+  <image href="eco-regime-shifts.png" x="0" y="0" width="1800" height="720" preserveAspectRatio="xMidYMid meet"/>
+  <line x1="75" y1="774" x2="1725" y2="774" stroke="#c9d5d2" stroke-width="2"/>
+  <rect x="90" y="824" width="1620" height="1254" rx="10" fill="#ffffff" stroke="#c9d5d2" stroke-width="2"/>
+  <image href="eco-algal-carbon-nutrient-model-corrected-v2.png" x="105" y="844" width="1590" height="1214" preserveAspectRatio="xMidYMid meet"/>
+  <text x="900" y="2123" text-anchor="middle" fill="#536c72" font-family="Arial, Helvetica, sans-serif" font-size="24" font-style="italic">
+    <tspan x="900">Diagram of the algal–carbon–nutrient simulation models adapted from Zhang and Johnson.</tspan>
+    <tspan x="900" dy="36">Aquatic Nutrient Simulation Modules (NSMs) Developed for Hydrologic and Hydraulic Models. 2016. ERDC/EL TR-16-1.</tspan>
+  </text>
+</svg>

@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junna Wang 结合生态观测、过程模型和大数据分析，研究生物多样性、生态水文学与河流—河口生态系统。">
+  <title>Junna Wang — 生物多样性与生态水文学</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #35555b;
+      --river: #0f4b55;
+      --deep: #0b3540;
+      --water: #7fa9ad;
+      --wetland: #718064;
+      --sediment: #b4874d;
+      --paper: #f3efe6;
+      --paper-bright: #faf8f2;
+      --line: rgba(18, 54, 64, .18);
+      --shadow: 0 24px 64px rgba(12, 47, 54, .12);
+      --serif: "Songti SC", STSong, "Noto Serif CJK SC", SimSun, Georgia, serif;
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 8%, rgba(127, 169, 173, .11), transparent 24rem),
+        var(--paper);
+      font: 400 1rem/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+      opacity: .13;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--sediment);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin: 0;
+      font: 400 clamp(2.25rem, 5vw, 4.1rem)/1.02 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-link {
+      flex: 0 0 auto;
+      padding-bottom: .22rem;
+      border-bottom: 1px solid currentColor;
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .section-link:hover { color: var(--sediment); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 239, 230, .91);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .brand {
+      text-decoration: none;
+      font: 600 1.02rem/1 var(--serif);
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.7vw, 2.5rem); }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .nav-links a:not(.scholar-link):hover { color: var(--sediment); }
+    .scholar-link {
+      border: 1px solid var(--ink);
+      padding: .65rem .9rem;
+      transition: color .2s ease, background .2s ease;
+    }
+    .scholar-link:hover { color: var(--paper-bright); background: var(--ink); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: calc(100svh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy {
+      padding: clamp(5rem, 9vw, 9rem) clamp(2.5rem, 5vw, 6.5rem) 4rem max(1.5rem, calc((100vw - var(--max)) / 2));
+      align-self: center;
+    }
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font: 400 clamp(3.3rem, 6.1vw, 6.6rem)/.93 var(--serif);
+      letter-spacing: -.052em;
+    }
+    .hero-lede {
+      max-width: 610px;
+      margin: 2rem 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.3vw, 1.22rem);
+      line-height: 1.65;
+    }
+    .affiliation { margin: 1.25rem 0 0; font-family: var(--serif); font-size: 1.15rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2.25rem; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      padding: .8rem 1.2rem;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      font-size: .84rem;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { color: var(--paper-bright); background: var(--river); border-color: var(--river); }
+    .button.secondary:hover { color: var(--paper-bright); background: var(--ink); }
+    .hero-quote {
+      max-width: 480px;
+      margin: 3.7rem 0 0;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--ink-soft);
+      font: italic 1rem/1.55 var(--serif);
+    }
+    .hero-visual {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, var(--paper) 0%, rgba(243, 239, 230, .28) 11%, rgba(10, 50, 60, .04) 45%),
+        linear-gradient(180deg, rgba(8, 40, 47, .04), rgba(8, 40, 47, .38)),
+        url("assets/river-estuary-hero.png") center/cover no-repeat,
+        var(--water);
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.13) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(90deg, transparent, #000 35%);
+    }
+    .flow-lines {
+      position: absolute;
+      right: -10%;
+      bottom: 7%;
+      width: 80%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.36);
+      border-radius: 44% 56% 60% 40%;
+      box-shadow:
+        0 0 0 18px rgba(255,255,255,.07),
+        0 0 0 36px rgba(255,255,255,.06),
+        0 0 0 54px rgba(255,255,255,.05),
+        0 0 0 72px rgba(255,255,255,.04);
+      transform: rotate(-16deg);
+    }
+    .map-note {
+      position: absolute;
+      right: clamp(1.3rem, 3vw, 3.5rem);
+      max-width: 140px;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      line-height: 1.55;
+      text-transform: uppercase;
+      text-shadow: 0 2px 14px rgba(0,0,0,.35);
+    }
+    .map-note.top { top: 3rem; }
+    .map-note.bottom { bottom: 3rem; }
+
+    .manifesto { padding: clamp(5rem, 9vw, 8rem) 0; border-bottom: 1px solid var(--line); }
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: .55fr 2fr .55fr;
+      align-items: center;
+      gap: 3rem;
+    }
+    .manifesto-center { max-width: 850px; margin: auto; text-align: center; }
+    .manifesto-center p { max-width: 720px; margin: 1.5rem auto 0; color: var(--ink-soft); font-size: 1.08rem; }
+    .margin-copy {
+      color: var(--ink-soft);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      line-height: 1.75;
+      text-transform: uppercase;
+    }
+    .margin-quote { color: var(--ink-soft); font: italic 1.03rem/1.45 var(--serif); }
+    .continuum {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .continuum span {
+      position: relative;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: .69rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .continuum span::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--sediment);
+    }
+
+    section.content-section { padding: clamp(5rem, 9vw, 8rem) 0; border-bottom: 1px solid var(--line); }
+    .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .theme-card {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      background: rgba(250, 248, 242, .5);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .theme-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); background: var(--paper-bright); }
+    .theme-number { color: var(--sediment); font: italic 1rem var(--serif); }
+    .theme-symbol { width: 70px; color: var(--river); }
+    .theme-symbol svg { width: 100%; height: auto; }
+    .theme-card h3 { margin: 2rem 0 .8rem; font: 400 1.65rem/1.1 var(--serif); }
+    .theme-card h3 a, .project-card h3 a { color: inherit; text-decoration: none; }
+    .theme-card h3 a:hover, .project-card h3 a:hover { color: var(--sediment); }
+    .theme-card p { margin: 0; color: var(--ink-soft); }
+
+    .feature-grid { display: grid; grid-template-columns: 1.25fr .85fr; gap: 1rem; }
+    .lead-project {
+      min-height: 590px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(10,45,54,.04), rgba(10,45,54,.77)),
+        url("assets/river-estuary-hero.png") center/cover no-repeat,
+        var(--water);
+      color: white;
+      overflow: hidden;
+    }
+    .lead-project-copy { padding: 2rem; background: linear-gradient(180deg, transparent, rgba(6, 35, 43, .7)); }
+    .project-tag { font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .lead-project h3 { max-width: 760px; margin: .6rem 0 .8rem; font: 400 clamp(2rem, 4vw, 3.7rem)/1.02 var(--serif); }
+    .lead-project p { max-width: 620px; margin: 0; color: rgba(255,255,255,.83); }
+    .side-projects { display: grid; grid-template-rows: repeat(3, 1fr); gap: 1rem; }
+    .project-card {
+      position: relative;
+      min-height: 180px;
+      padding: 1.6rem 5.5rem 1.6rem 1.6rem;
+      border: 1px solid var(--line);
+      background: rgba(250, 248, 242, .58);
+      transition: background .2s ease;
+    }
+    .project-card:hover { background: var(--paper-bright); }
+    .project-card h3 { max-width: 440px; margin: 0 0 .65rem; font: 400 1.45rem/1.12 var(--serif); }
+    .project-card p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+    .project-arrow { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.35rem; }
+
+    .publications { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .publication {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr) 78px;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .pub-index, .pub-year { color: var(--ink-soft); font-size: .82rem; }
+    .pub-year { text-align: right; font-weight: 700; }
+    .publication h3 { margin: 0; font: 400 1.18rem/1.35 var(--serif); }
+    .publication h3 a { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+    .publication h3 a:hover { color: var(--sediment); }
+    .publication p { margin: .35rem 0 0; color: var(--ink-soft); font-size: .86rem; font-style: italic; }
+
+    .notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .note-card { padding-top: 1.25rem; border-top: 1px solid var(--ink); }
+    .note-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--sediment); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .note-card h3 { margin: 1.2rem 0 .7rem; font: 400 1.55rem/1.14 var(--serif); }
+    .note-card p { margin: 0; color: var(--ink-soft); }
+
+    .contact-band {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      color: var(--paper-bright);
+      background: var(--deep);
+    }
+    .contact-band::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -130px;
+      top: -260px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 42% 58% 49% 51%;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.025), 0 0 0 56px rgba(255,255,255,.02);
+    }
+    .contact-inner { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .contact-band h2 { max-width: 860px; margin: 0; font: 400 clamp(2.8rem, 6vw, 5.3rem)/.98 var(--serif); letter-spacing: -.04em; }
+    .contact-band p { max-width: 630px; margin: 1rem 0 0; color: rgba(255,255,255,.72); }
+    .contact-band .button { border-color: rgba(255,255,255,.75); color: white; white-space: nowrap; }
+    .contact-band .button:hover { color: var(--deep); background: white; }
+
+    footer { padding: 2rem 0; background: var(--paper-bright); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: .8rem; }
+    .footer-name { font-family: var(--serif); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: flex; gap: 1.4rem; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--sediment); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 1.5rem 1.5rem;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper-bright);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .9rem 0; border-bottom: 1px solid var(--line); }
+      .nav-links .scholar-link { margin-top: 1rem; padding: .8rem 1rem; text-align: center; border: 1px solid var(--ink); }
+      .hero { min-height: auto; grid-template-columns: 1fr; }
+      .hero-copy { padding: 6rem max(1.5rem, calc((100vw - var(--max)) / 2)) 4rem; }
+      .hero-visual { min-height: 64vw; }
+      .manifesto-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .margin-copy, .margin-quote { text-align: center; }
+      .theme-grid { grid-template-columns: 1fr; }
+      .theme-card { min-height: 250px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .lead-project { min-height: 560px; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 2rem), var(--max)); }
+      .nav { min-height: 68px; }
+      .nav-links { top: 68px; }
+      .brand { font-size: .88rem; letter-spacing: .2em; }
+      .hero-copy { padding: 4.5rem 1rem 3.5rem; }
+      .hero h1 { font-size: clamp(3rem, 14vw, 4.8rem); }
+      .hero-visual { min-height: 86vw; }
+      .map-note { display: none; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .continuum { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+      .project-card { padding-right: 4rem; }
+      .publication { grid-template-columns: 32px minmax(0, 1fr); }
+      .pub-year { grid-column: 2; text-align: left; }
+      .notes-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Junna Wang home">Junna Wang</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="打开导航">菜单</button>
+      <nav class="nav-links" id="navigation" aria-label="主导航">
+        <a href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">关于</a>
+        <a href="#research">研究</a>
+        <a href="#publications">论文</a>
+        <a href="#notes">田野笔记</a>
+        <a href="#contact">联系</a>
+        <a href="index.html" lang="en">English</a>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">生物多样性 · 生态水文学 · 数据与模型</p>
+        <h1 id="hero-title">理解水如何塑造生物多样性、生态系统与韧性。</h1>
+        <p class="hero-lede">我结合生态观测、过程模型和大数据分析，研究河流、河口与受管理水系统的变化规律。</p>
+        <p class="affiliation">耶鲁大学</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research">探索研究 <span aria-hidden="true">→</span></a>
+          <a class="button secondary" href="#publications">查看论文</a>
+        </div>
+        <p class="hero-quote">“河流连接景观、生命与人类。”</p>
+      </div>
+      <div class="hero-visual" role="img" aria-label="河流汇入滨海河口的航拍景观">
+        <div class="flow-lines" aria-hidden="true"></div>
+        <p class="map-note top">观测<br>模拟<br>理解<br>面向更具韧性的未来</p>
+        <p class="map-note bottom">水<br>生物多样性<br>人类<br>彼此相连</p>
+      </div>
+    </section>
+
+    <section class="manifesto" id="about" aria-labelledby="about-title">
+      <div class="container reveal">
+        <div class="manifesto-grid">
+          <p class="margin-copy">从山地<br>到河口<br>相互连接的<br>生态系统</p>
+          <div class="manifesto-center">
+            <p class="eyebrow">研究视角</p>
+            <h2 class="section-title" id="about-title">连接水流、生命与环境变化。</h2>
+            <p>我研究水文过程、营养盐与人类基础设施如何共同塑造水生生物多样性和生态系统过程。</p>
+          </div>
+          <p class="margin-quote">“从源头到海洋，水将生态系统联结在一起。”</p>
+        </div>
+        <div class="continuum" aria-label="河流连续体">
+          <span>水库</span><span>河流</span><span>河口</span><span>近岸海洋</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">01 · 研究</p>
+            <h2 class="section-title" id="research-title">研究方向</h2>
+          </div>
+          <a class="section-link" href="#featured">浏览代表性研究 →</a>
+        </div>
+        <div class="theme-grid">
+          <article class="theme-card reveal">
+            <span class="theme-number">01</span>
+            <div>
+              <div class="theme-symbol" aria-hidden="true"><svg viewBox="0 0 90 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 11c11-9 20 9 31 0s20 9 31 0 17 3 24 0M2 25c11-9 20 9 31 0s20 9 31 0 17 3 24 0"/></svg></div>
+              <h3>河流—河口生态系统</h3>
+              <p>研究相互连通的淡水与滨海系统中浮游植物、溶解氧和营养盐的动态变化。</p>
+            </div>
+          </article>
+          <article class="theme-card reveal">
+            <span class="theme-number">02</span>
+            <div>
+              <div class="theme-symbol" aria-hidden="true"><svg viewBox="0 0 90 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 24c16-15 35-15 49 0-14 15-33 15-49 0Z"/><path d="m57 24 24-15-5 15 5 15-24-15ZM22 20h1"/></svg></div>
+              <h3><a href="biodiversity-flow-regulation-zh.html">生物多样性与水流调控</a></h3>
+              <p>探索生态流量、水坝和水文变异如何影响水生生物多样性与鱼类繁殖。</p>
+            </div>
+          </article>
+          <article class="theme-card reveal">
+            <span class="theme-number">03</span>
+            <div>
+              <div class="theme-symbol" aria-hidden="true"><svg viewBox="0 0 90 48" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 12 24-9 24 9-24 9-24-9Zm0 12 24 9 24-9M12 36l24 9 24-9"/><path d="M70 42V24m8 18V12m8 30V4"/></svg></div>
+              <h3>生态水文建模</h3>
+              <p>运用过程模型、HEC-RAS 与大数据分析理解并预测水生生态系统。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">02 · 代表成果</p>
+            <h2 class="section-title" id="featured-title">重点研究</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="lead-project reveal">
+            <div></div>
+            <div class="lead-project-copy">
+              <span class="project-tag">河流—河口连续体</span>
+              <h3>河流—河口连续体中的浮游植物、溶解氧与营养盐</h3>
+              <p>结合现场观测与模型，理解相互连通的水生系统中浮游植物、溶解氧和营养盐的分布规律。</p>
+            </div>
+          </article>
+          <div class="side-projects">
+            <article class="project-card reveal">
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <h3><a href="biodiversity-flow-regulation-zh.html">鱼类繁殖对三峡大坝的响应</a></h3>
+              <p>研究受调控河流中仔鱼丰度与鱼类繁殖的环境驱动因素。</p>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <h3>河岸植被—水流相互作用建模</h3>
+              <p>评估集成于 HEC-RAS 的植被糙率计算方法。</p>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <h3>数据驱动的梯级水电调度</h3>
+              <p>利用数据挖掘为梯级水电站的运行规则提供依据。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="publications" aria-labelledby="publications-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">03 · 论文</p>
+            <h2 class="section-title" id="publications-title">代表论文与动态</h2>
+          </div>
+          <a class="section-link" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">在 Scholar 查看全部 ↗</a>
+        </div>
+        <ol class="publications reveal">
+          <li class="publication">
+            <span class="pub-index">01</span>
+            <div><h3><a href="https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noreferrer">Apple 发布 iPhone 18 Pro 与 iPhone 18 Pro Max</a></h3><p>Apple 新闻稿 · 2026 年 9 月 9 日</p></div>
+            <span class="pub-year">2026</span>
+          </li>
+          <li class="publication">
+            <span class="pub-index">02</span>
+            <div><h3>富营养化河流—河口连续体中的浮游植物、溶解氧和营养盐分布：观测与模拟</h3><p>Journal of Environmental Management, 261, 110233</p></div>
+            <span class="pub-year">2020</span>
+          </li>
+          <li class="publication">
+            <span class="pub-index">03</span>
+            <div><h3>HEC-RAS 中河岸植被糙率计算方法的评估</h3></div>
+            <span class="pub-year">2019</span>
+          </li>
+          <li class="publication">
+            <span class="pub-index">04</span>
+            <div><h3>影响四大家鱼仔鱼丰度的关键环境因子变化</h3><p>Freshwater Biology, 59(7), 1343–1360</p></div>
+            <span class="pub-year">2014</span>
+          </li>
+          <li class="publication">
+            <span class="pub-index">05</span>
+            <div><h3>基于数据挖掘调度规则的三峡—葛洲坝梯级水电站非汛期短期优化运行</h3><p>Energy Conversion and Management, 65, 616–627</p></div>
+            <span class="pub-year">2013</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="content-section" id="notes" aria-labelledby="notes-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">04 · 田野与思考</p>
+            <h2 class="section-title" id="notes-title">田野笔记</h2>
+          </div>
+        </div>
+        <div class="notes-grid">
+          <article class="note-card reveal"><div class="note-meta"><span>生态观测</span><span>01</span></div><h3>解读河流连续体中的变化</h3><p>连接季节性观测、水质变化与水生生命的现场记录。</p></article>
+          <article class="note-card reveal"><div class="note-meta"><span>研究方法</span><span>02</span></div><h3>连接模型与数据</h3><p>思考现场证据与过程模型如何相互验证、彼此加强。</p></article>
+          <article class="note-card reveal"><div class="note-meta"><span>生物多样性</span><span>03</span></div><h3>受调控水流中的生态过程</h3><p>关于变化水环境中持续性、适应与生物多样性的问题。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner reveal">
+        <div><h2 id="contact-title">一起理解不断变化的水环境。</h2><p>欢迎围绕水生生态系统交流研究构想、合作机会与新的问题。</p></div>
+        <a class="button" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">查看 Google Scholar ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><span class="footer-name">Junna Wang</span> · 耶鲁大学</div>
+      <div class="footer-links"><a href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">关于</a><a href="#research">研究</a><a href="#publications">论文</a><a href="index.html" lang="en">English</a><a href="#top">返回顶部 ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navigation.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '关闭' : '菜单';
+    });
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navigation.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '菜单';
+      }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>

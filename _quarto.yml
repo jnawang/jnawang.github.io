@@ -16,7 +16,7 @@ website:
     background: primary
     left:
       - text: "Home"
-        href: index.qmd
+        href: index.html
     right: 
       - icon: github
         href: https://github.com/lter/workshop-quarto

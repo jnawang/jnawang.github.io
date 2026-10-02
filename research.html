@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Junna Wang’s research themes: biodiversity, carbon–climate feedback, ecohydrology, and biogeochemistry.">
+  <title>Research — Junna Wang</title>
+  <style>
+    :root {
+      --ink: #123640;
+      --ink-soft: #49666b;
+      --climate: #bd884c;
+      --paper: #f3efe6;
+      --paper-light: #fbf9f3;
+      --line: rgba(18, 54, 64, .17);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1380px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 18%, rgba(142, 181, 182, .15), transparent 24rem),
+        var(--paper);
+      font: 400 1rem/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .11;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    img { display: block; width: 100%; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 239, 230, .86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      width: min(calc(100% - 3rem), var(--max));
+      height: 100%;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .brand {
+      text-decoration: none;
+      font: 600 1rem/1.2 var(--serif);
+      letter-spacing: .055em;
+      white-space: nowrap;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(1rem, 2.2vw, 2rem);
+    }
+    .site-nav a {
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] { color: var(--climate); }
+    .site-nav .scholar-link {
+      padding: .52rem .72rem;
+      border: 1px solid var(--ink);
+    }
+    .site-nav .scholar-link:hover { color: var(--paper-light); background: var(--ink); }
+
+    .page {
+      min-height: calc(100svh - 72px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .research-content {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      padding: clamp(2.5rem, 5vh, 4.5rem) 0 2.5rem;
+    }
+    .page-intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: clamp(2rem, 4vh, 3.5rem);
+    }
+    .eyebrow {
+      margin: 0 0 .7rem;
+      color: var(--climate);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font: 400 clamp(3rem, 5vw, 5.5rem)/.94 var(--serif);
+      letter-spacing: -.05em;
+    }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .theme-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: rgba(251, 249, 243, .62);
+    }
+    .theme-card figure {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .theme-image {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      filter: saturate(.82) contrast(.98);
+      transition: filter .25s ease, transform .25s ease;
+    }
+    .theme-card:hover .theme-image { filter: saturate(1) contrast(1); transform: scale(1.015); }
+    .image-frame {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+    .image-frame:focus-visible {
+      outline: 3px solid var(--climate);
+      outline-offset: 3px;
+    }
+    .image-frame::after {
+      content: "";
+      position: absolute;
+      inset: 32% 0 0;
+      background: linear-gradient(to bottom, transparent, rgba(5, 26, 31, .78));
+      pointer-events: none;
+    }
+    .theme-overlay {
+      position: absolute;
+      z-index: 1;
+      right: 1.15rem;
+      bottom: 1rem;
+      left: 1.15rem;
+      color: #fff;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, .34);
+    }
+    .theme-card figcaption {
+      flex: 1;
+      padding: .9rem 1.15rem 1.15rem;
+    }
+    .theme-index {
+      display: block;
+      color: rgba(255, 255, 255, .82);
+      font: italic .82rem/1 var(--serif);
+    }
+    .theme-card h2 {
+      margin: .45rem 0 0;
+      color: #fff;
+      font: 400 clamp(1.35rem, 2vw, 1.85rem)/1.08 var(--serif);
+    }
+    .photo-credit {
+      display: block;
+      color: var(--ink-soft);
+      font-size: .67rem;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .2em;
+    }
+    .photo-credit:hover { color: var(--climate); }
+    .directions-label {
+      display: block;
+      margin-top: .85rem;
+      padding-top: .75rem;
+      border-top: 1px solid var(--line);
+      color: var(--climate);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .research-directions {
+      margin: .62rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .research-directions li {
+      position: relative;
+      padding-left: .9rem;
+      font: 400 1rem/1.38 var(--serif);
+    }
+    .research-directions li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--climate);
+      font-weight: 700;
+    }
+    .research-directions li + li { margin-top: .5rem; }
+    .page-foot {
+      width: min(calc(100% - 3rem), var(--max));
+      margin-inline: auto;
+      padding: 1rem 0 1.2rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+      color: var(--ink-soft);
+      font-size: .76rem;
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 1050px) {
+      .theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .site-header { height: auto; }
+      .header-inner, .research-content, .page-foot { width: min(calc(100% - 2rem), var(--max)); }
+      .header-inner {
+        min-height: 64px;
+        padding: .75rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .65rem;
+      }
+      .brand { font-size: .88rem; letter-spacing: .035em; }
+      .site-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1.15rem;
+        overflow-x: auto;
+        padding-bottom: .2rem;
+      }
+      .site-nav a { font-size: .74rem; }
+      .page { min-height: auto; }
+      .research-content { padding: 3.5rem 0 2rem; }
+      .page-intro { align-items: flex-start; flex-direction: column; }
+      h1 { font-size: clamp(3rem, 13vw, 4.5rem); }
+      .theme-grid { grid-template-columns: 1fr; }
+      .page-foot { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .theme-image { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">Biodiversity &amp; Complex Systems Science</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=O63FOX4AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="research-content" aria-labelledby="research-title">
+      <div class="page-intro">
+        <div>
+          <p class="eyebrow">Research</p>
+          <h1 id="research-title">Research Themes</h1>
+        </div>
+      </div>
+
+      <div class="theme-grid">
+        <article class="theme-card">
+          <figure>
+            <a class="image-frame" href="research-biodiversity.html" aria-label="View Biodiversity research theme">
+              <img class="theme-image" src="assets/research-biodiversity.jpg" alt="California wildflowers blooming across the Carrizo Plain landscape" loading="eager">
+              <div class="theme-overlay">
+                <span class="theme-index">01</span>
+                <h2>Biodiversity</h2>
+              </div>
+            </a>
+            <figcaption>
+              <a class="photo-credit" href="https://www.fws.gov/media/carrizo-plain-wildflowers" target="_blank" rel="noreferrer">Photo: Ellie DeMarse · USFWS</a>
+              <span class="directions-label">Research directions</span>
+              <ul class="research-directions">
+                <li>Biodiversity–Stability Relationships</li>
+                <li>Plant Range Shifts and Diversity Redistribution</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="theme-card">
+          <figure>
+            <a class="image-frame" href="research-carbon-climate.html" aria-label="View Carbon–Climate Feedback research theme">
+              <img class="theme-image" src="assets/research-carbon-climate.jpg" alt="Forest canopy surrounding a carbon-flux observation tower" loading="eager">
+              <div class="theme-overlay">
+                <span class="theme-index">02</span>
+                <h2>Carbon–Climate Feedback</h2>
+              </div>
+            </a>
+            <figcaption>
+              <span class="photo-credit">Harvard Forest Flux Tower</span>
+              <span class="directions-label">Research directions</span>
+              <ul class="research-directions">
+                <li>Trends of Terrestrial Carbon-Climate Feedback</li>
+                <li>Thermal Acclimation of Ecosystem Respiration</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="theme-card">
+          <figure>
+            <a class="image-frame" href="research-ecohydrology.html" aria-label="View Ecohydrology research theme">
+              <img class="theme-image" src="assets/research-ecohydrology.jpg" alt="The Three Gorges Dam spanning the Yangtze River" loading="lazy">
+              <div class="theme-overlay">
+                <span class="theme-index">03</span>
+                <h2>Ecohydrology</h2>
+              </div>
+            </a>
+            <figcaption>
+              <span class="photo-credit">Three Gorges Dam · Yangtze River</span>
+              <span class="directions-label">Research directions</span>
+              <ul class="research-directions">
+                <li>Flow – Riparian Vegetation Interactions</li>
+                <li>Dammed Rivers as Complex Social–Ecological Systems</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="theme-card">
+          <figure>
+            <a class="image-frame" href="research-biogeochemistry.html" aria-label="View Biogeochemistry research theme">
+              <img class="theme-image" src="assets/river-estuary-hero.png" alt="A river flowing through wetlands into a broad estuary" loading="lazy">
+              <div class="theme-overlay">
+                <span class="theme-index">04</span>
+                <h2>Biogeochemistry</h2>
+              </div>
+            </a>
+            <figcaption>
+              <span class="photo-credit">River–estuary continuum</span>
+              <span class="directions-label">Research directions</span>
+              <ul class="research-directions">
+                <li>Regime Shifts in Eutrophic River Ecosystems</li>
+                <li>Terrestrial Support of Aquatic Food Webs</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <footer class="page-foot">Biodiversity · Complex Adaptive System · Global Change</footer>
+  </main>
+</body>
+</html>
